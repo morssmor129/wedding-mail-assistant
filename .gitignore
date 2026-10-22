@@ -1,0 +1,16 @@
+/profil/
+/private/
+/maile/
+/backups/
+**/company-profile.md
+!/references/company-profile.md
+**/user-style.md
+**/company-profile.txt
+**/user-style.txt
+**/profile-history.md
+.env
+.env.*
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

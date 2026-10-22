@@ -1,0 +1,28 @@
+WMA COMPANY PROFILE - WZÓR, NIE JEST PROFILEM KLIENTA
+profile_type: company
+schema_version: 1
+tool_version: 1.2.0
+company_key: [identyfikator-firmy]
+revision: 0
+approval: TEMPLATE
+updated_at: nieustalona
+change_note: pusty wzór; nie dodawaj go do źródeł jako wypełnionego profilu
+
+Nazwa firmy / marka: [uzupełnij]
+Branża / rodzaj usługi: [uzupełnij]
+Nadawca / osoba kontaktowa: [uzupełnij]
+Miejscowość i obszar działania: [uzupełnij]
+Instagram / WWW / portfolio: [uzupełnij lub nieustalone]
+Typowy skład i role: [uzupełnij]
+Oferta podstawowa / pakiety / godziny / rezultat: [uzupełnij]
+Dodatki i współpracownicy: [uzupełnij lub nie dotyczy]
+Orientacyjny cennik: [uzupełnij lub nieustalone]
+Waluta i sposób prezentacji kwot: [kwoty końcowe / brutto / netto / nieustalone]
+Dojazd / nocleg / nadgodziny: [uzupełnij]
+Rzeczywiste wyróżniki: [uzupełnij]
+Proces rezerwacji i płatności: [uzupełnij]
+Podpis i stopka: [wyłączone lub dokładna zatwierdzona treść]
+Domyślne planowane załączniki: [brak / PDF / projekt umowy / oba]
+Stałe ograniczenia oferty: [uzupełnij lub nieustalone]
+
+Przy każdej nowej ofercie osobno potwierdź cenę końcową, zakres, dodatki, dojazd i planowane załączniki. Nie zapisuj tu danych konkretnych par ani potwierdzenia dostępności terminu.

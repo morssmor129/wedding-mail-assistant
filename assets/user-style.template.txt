@@ -1,0 +1,26 @@
+WMA USER STYLE - WZÓR, NIE JEST PROFILEM KLIENTA
+profile_type: style
+schema_version: 1
+tool_version: 1.2.0
+company_key: [identyfikator-firmy]
+revision: 0
+approval: TEMPLATE
+updated_at: nieustalona
+change_note: pusty wzór; nie dodawaj go do źródeł jako wypełnionego profilu
+
+Formalność: [uzupełnij]
+Energia i ton: [uzupełnij]
+Powitanie: [uzupełnij]
+Forma nadawcy: [ja / my / uzgodniona reguła]
+Zwroty do pary i zapis grzecznościowy: [uzupełnij]
+Rytm i długość zdań: [uzupełnij]
+Zwroty preferowane: [uzupełnij]
+Zwroty unikane: [uzupełnij]
+Humor: [brak / subtelny / uzgodniona reguła]
+Emoji: [domyślnie brak; inny wybór tylko po zatwierdzeniu]
+Zakończenie: [uzupełnij]
+Długość: oferta 180-250 słów, follow-up 70-130; nie licz tematu i podpisu
+Zatwierdzone obserwacje z przykładów: [abstrakcyjne reguły lub brak]
+Ostatnie zmiany: [numer rewizji i opis; bez danych par]
+
+Profil zmienia język, nie metodologię. Nie wyłączaj sprawdzania faktów, potwierdzania wyceny, CTA, zakazu Markdowna ani długich myślników w finalnym mailu.
