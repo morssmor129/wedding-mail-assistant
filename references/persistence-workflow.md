@@ -1,10 +1,6 @@
-# Wybór sposobu trwałego zapisu
-Główny tryb 1.2.0: agent desktopowy z autoryzowanym trwałym folderem.
-W tym trybie wykonaj [local-workspace.md](local-workspace.md).
-Stany: ROBOCZY -> ZATWIERDZONY -> ZAPISANY -> ODCZYT ZWERYFIKOWANY.
+# Wybór sposobu zapisu
+Domyślnie używaj autoryzowanej trwałej przestrzeni i [local-workspace.md](local-workspace.md). Stany wewnętrzne: ROBOCZY -> ZATWIERDZONY -> ZAPISANY -> ODCZYT ZWERYFIKOWANY -> DEMO. Przejścia wynikają z rzeczywistych operacji, nie deklaracji w tekście.
 
-Sprawdź profile_type, company_key, revision i approval. Stan zapisu wynika z operacji narzędzi, nie ze słowa "zapisano" w treści.
+Po pierwszym odczycie zweryfikowanym wykonaj [demo-workflow.md](demo-workflow.md). Nie proś klienta o samodzielne testy, nie pokazuj ścieżek ani rewizji. Nie przechodź do stanu gotowości przy błędzie zapisu.
 
-Wariant Projects wybierz tylko na wyraźną prośbę. Wtedy wykonaj [project-persistence.md](project-persistence.md), łącznie z eksportem i dodaniem do źródeł przez użytkownika. Nie przełączaj trybów po cichu.
-
-Plik do pobrania w sandboxie nie jest profilem na komputerze klienta. Dostęp do GitHub nie jest dostępem do jego dysku. Błąd odczytu nie uprawnia do wyzerowania profilu.
+Tylko na wyraźną prośbę wybierz wariant [project-persistence.md](project-persistence.md). Tam nadal wymagane jest faktyczne utrwalenie źródła, nie samo wygenerowanie pliku. Nie przełączaj trybów po cichu. Dostęp do repozytorium nie daje dostępu do dysku klienta.

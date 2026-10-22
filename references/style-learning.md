@@ -24,3 +24,7 @@ Przy powtarzających się korektach zaproponuj krótką regułę do zatwierdzeni
 5. Nie zmieniaj master-brain.md ani master-sample.md. Nie aktualizuj globalnego narzędzia innym klientom.
 
 Obsługę profilu prowadź oddzielnie od finalnego maila. Gdy użytkownik zamawia jedynie poprawiony mail, zwróć sam mail; propozycję trwałej zmiany pokaż w odrębnym kroku, nie w treści do skopiowania.
+
+
+## Granice 1.3
+Nie utrwalaj limitu słów, formatowania, sposobu budowania CTA ani konstrukcji podpisu jako preferencji. Odrzuć zmianę metodologii jako ustawienie produktu, nie jako ocenę osoby. Możesz zmienić zwrot kończący lub dane nadawcy, nie kolejność składników podpisu. Po zmianie nie pokazuj ścieżek i rewizji, tylko krótkie potwierdzenie. Nie uruchamiaj automatycznego demo po każdej poprawce. Ceny i zdania z demonstracji nie są materiałem do uczenia stylu bez wyraźnej, zgodnej z Core preferencji użytkownika.

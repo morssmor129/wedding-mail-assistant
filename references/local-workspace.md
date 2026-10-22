@@ -1,41 +1,26 @@
-# Trwały profil w lokalnym folderze
+# Trwały profil w lokalnej przestrzeni
 
-## Zakres
-ROOT to folder wskazany przez klienta. Nie zgaduj ścieżki Windows/macOS ani nie używaj zamiast niej folderu serwera. Kopię narzędzia trzymaj zwykle w ROOT/narzedzie, a prywatne dane obok:
-- ROOT/profil/company-profile.md
-- ROOT/profil/user-style.md
-- ROOT/profil/profile-history.md
-- ROOT/profil/backups/
+ROOT oznacza wyłącznie prywatny folder wskazany przez klienta i dostępny do odczytu oraz zapisu. Sandbox, /mnt/data ani dostęp do GitHuba nie dowodzą dostępu do komputera klienta. Nie przeszukuj całego dysku. Jedna przestrzeń obsługuje jedną firmę.
 
-Jedna przestrzeń to jedna firma. Nie przeszukuj innych folderów, nie wysyłaj profili na GitHub. Jeżeli ROOT jest katalogiem repozytorium, .gitignore ma wykluczać katalog profil. Samo .gitignore nie jest szyfrowaniem ani gwarancją prywatności.
+Kopia narzędzia: zwykle ROOT/narzedzie. Dane prywatne: ROOT/profil/company-profile.md, ROOT/profil/user-style.md, ROOT/profil/profile-history.md oraz ROOT/profil/backups/. Nigdy nie publikuj tych danych. .gitignore nie jest szyfrowaniem.
 
-## Odczyt przed nową sprawą
-1. Odczytaj pełną zawartość obu aktywnych profili z ROOT/profil.
-2. Sprawdź profile_type, schema_version, wspólny company_key, revision > 0 i approval: approved. TEMPLATE nie jest konfiguracją.
-3. Nie wybieraj automatycznie kopii z backups jako aktywnej wersji. Konflikt dwóch aktywnych wersji lub firm wyjaśnij, nie łącz ich.
-4. Istniejący profil oznacza brak powtórzenia onboardingu. Przy braku dostępu sprawdź folder i uprawnienia. Brak jednej części nie uzasadnia kasowania drugiej.
-5. Dane już zatwierdzone w bieżącej rozmowie możesz zapisać bez ponownego wywiadu. Przy migracji .txt zachowaj treść i kopie; po zatwierdzeniu pozostaw jeden aktywny format.
+## Odczyt
+Odczytaj oba aktywne profile przed nową sprawą. Sprawdź profile_type, schema_version: 2, wspólny company_key, dodatni revision i approval: approved. TEMPLATE nie jest profilem. Starszy schemat migruj według company-profile.md bez ponownego całego onboardingu. Nie wybieraj kopii z backups jako aktywnej i nie łącz profili dwóch firm. Brak dostępu nie oznacza braku danych ani zgody na ich wyzerowanie.
 
-## Pierwszy zapis
-1. Uzyskaj zatwierdzenie podsumowania. Wyraźne polecenie zapisania konkretnych danych jest zgodą, nie pytaj ponownie.
-2. Przygotuj oba kompletne profile według company-profile.md: revision: 1, approval: approved, ten sam company_key, tool_version: 1.2.0 i rzeczywista znana data.
-3. Sprawdź, czy pliki nie istnieją. Jeżeli istnieją, przejdź do aktualizacji, nie nadpisuj ich pustym wzorem.
-4. Zapisz UTF-8 w ROOT/profil. Gdy narzędzie pozwala, najpierw utwórz pliki tymczasowe o unikalnych nazwach, sprawdź ich treść i dopiero wtedy zastąp pliki docelowe.
-5. Odczytaj zapisane pliki i porównaj je z zatwierdzoną treścią, typem, company_key i revision. Jeżeli jeden zapis się nie udał, zgłoś częściowy wynik.
-6. Dopisz do profile-history.md datę, nazwy profili i rewizje. Nie dodawaj danych par ani całych rozmów.
-7. Po zweryfikowanym odczycie potwierdź rzeczywiste ścieżki i rewizje. Nie każ klientowi pobierać i ponownie wgrywać profili.
+## Zapis po akceptacji
+1. Uzyskaj zatwierdzenie podsumowania. Jednoznaczna akceptacja jest zgodą na zapis, nie proś o ponowne kliknięcie ani komendę.
+2. Przygotuj kompletne profile schematu 2 według wzorów; pierwszy revision to 1, tool_version to 1.3.0. Zachowaj dane już zatwierdzone. Nie twórz nowej firmy na podstawie demo.
+3. Jeżeli pliki istnieją, przejdź do aktualizacji. Nigdy nie zastępuj pełnego profilu pustym wzorem.
+4. Zapisz UTF-8 w ROOT/profil, najlepiej do unikalnych plików tymczasowych. Odczytaj je, porównaj z zatwierdzoną treścią, następnie bezpiecznie zastąp docelowe pliki. Ponownie odczytaj oba pliki docelowe. Kontroluj treść, wspólny klucz, zatwierdzenie i rewizję.
+5. Przy częściowym błędzie nie ogłaszaj gotowości. Nie ukrywaj błędu za pokazem maila. Powiedz np. "Nie udało się zapisać wszystkich ustawień. Sprawdź dostęp do zapisu".
+6. Dopisz datę i operację do prywatnej historii, bez treści maili i danych par. Szczegóły kontroli zachowaj do diagnostyki.
+7. Po udanym zapisie uruchom demo-workflow, nie instrukcję samodzielnego testu dla klienta. Nie wyświetlaj ścieżek, rewizji ani kart plików.
 
-## Aktualizacja stałej preferencji
-1. "Od teraz zawsze" oznacza stałą zmianę, "w tym mailu" tylko lokalną. Pochwała maila nie zmienia profilu.
-2. Odczytaj cały aktywny profil. Zmień tylko zatwierdzone pola; zachowaj resztę, company_key i Master Brain.
-3. Przed zapisem sprawdź ponownie rewizję lub skrót aktywnego pliku. Gdy inna sesja go zmieniła, odczytaj zmiany i uzgodnij konflikt, nie nadpisuj w ciemno.
-4. Zachowaj poprzednie bajty w nowej, unikalnie nazwanej kopii w backups. Nie nadpisuj starszych kopii.
-5. Zwiększ revision o 1, uaktualnij change_note i datę. Zapisz cały profil, nie pojedyncze zdanie. Preferuj bezpieczne zastąpienie pliku po sprawdzeniu pliku tymczasowego.
-6. Odczytaj wynik, sprawdź zgodność i dopisz historię. Nie deklaruj powodzenia przy błędzie. Niezapisana poprawka działa tylko w bieżącej rozmowie.
-7. Nie zmieniaj przy tym narzędzia ani profili innych firm. Kopie przywracaj tylko na polecenie.
+## Aktualizacja i konflikt
+Odczytaj cały profil, zachowaj company_key i niezmienione pola. "Od teraz zawsze" to stała zmiana; "w tym mailu" jest lokalna. Przed zapisem ponownie sprawdź skrót lub rewizję. Przy zmianie z innej sesji uzgodnij konflikt zamiast nadpisywać. Zapisz poprzednie bajty w nowej kopii backups, zwiększ revision, uzupełnij change_note i datę, zapisz cały plik oraz odczytaj go kontrolnie. Przywracaj kopie tylko na polecenie. Nie aktualizuj Core ani innych firm.
 
-## Sprawdź konfigurację
-Wykonaj odczyt z dysku i podaj ROOT, nazwy aktywnych plików, rewizje, nazwę firmy, branżę, skład i 2-3 reguły stylu. Nie odtwarzaj wyniku z samej pamięci rozmowy. Przy błędzie zgłoś brak weryfikacji.
+## Komunikacja
+Zwykły wynik: "Ustawienia zapisane" lub po pierwszym zapisie komunikat i przykład z demo-workflow. "Sprawdź konfigurację" oznacza rzeczywisty odczyt i krótkie potwierdzenie nazwy firmy oraz gotowości, bez technikaliów. Nazwy plików, lokalizacje i rewizje pokazuj tylko po wyraźnej prośbie o diagnostykę. Nie wymagaj nowej rozmowy od klienta jako kroku zakończenia onboardingu. Sprawdzenie dostępu w kolejnej sesji wykonuje asystent przy jej rozpoczęciu; nie twierdź, że już je wykonał, jeśli sprawdził tylko bieżącą sesję.
 
-## Granice
-Nie zapisuj do profili danych par, Fathoma, wyceny konkretnego wydarzenia ani deklaracji jego dostępności. Maile i notatki zapisuj osobno tylko na żądanie klienta, poza katalogiem dystrybucji. Nie publikuj danych i nie wysyłaj wiadomości. Lokalny folder nie oznacza offline ani braku przetwarzania kontekstu w chmurze dostawcy.
+## Prywatność
+Nie zapisuj notatek Fathoma, danych par, ustaleń pojedynczej oferty ani demo do profili. Eksportuj lub zapisuj maile i notatki osobno tylko na polecenie. Nie wysyłaj maili, nie twórz spotkań i nie rezerwuj terminów. Lokalny zapis nie jest obietnicą działania AI offline.

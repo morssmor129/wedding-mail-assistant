@@ -1,35 +1,28 @@
 # Wedding Mail Assistant by Jester Ads - START
-Wersja: 1.2.0. Instrukcja dla asystenta, nie skrypt powłoki.
+Wersja: 1.3.0. Instrukcja dla asystenta.
 Repozytorium: https://github.com/morssmor129/wedding-mail-assistant
 
-## Warunki uruchomienia
-Uruchom narzędzie w lokalnym Work w aplikacji ChatGPT Desktop. Użytkownik raz wskazuje prywatny folder i udziela wymaganych uprawnień. Po tym asystent sam odczytuje i zapisuje profile. Nie obiecuj zerowej liczby zgód ani nie wyłączaj zabezpieczeń.
+## Przygotowanie przestrzeni
+Użyj folderu wskazanego przez klienta w agencie z rzeczywistym odczytem i zapisem. Nie zastępuj go sandboxem ani /mnt/data. Nie przeszukuj całego dysku. Wymagane zgody respektuj, nie obiecuj uruchomienia bez uprawnień.
 
-1. Ustal pełną ścieżkę wybranego folderu ROOT. Nie przeszukuj całego komputera.
-2. Sprawdź rzeczywisty odczyt i zapis w ROOT: utwórz plik testowy o unikalnej nazwie, odczytaj jego treść, następnie usuń tylko własny plik testowy. Nie nadpisuj istniejących danych.
-3. Sandbox i /mnt/data nie dowodzą dostępu do dysku klienta. Bez odpowiednich narzędzi zatrzymaj instalację i wskaż konieczność otwarcia folderu w lokalnym Work.
-4. Sprawdź pełny odczyt repozytorium. Błąd 404 lub brak uprawnień zgłoś wprost. Nie proś o hasło ani token w czacie.
+Ustal ROOT wewnętrznie. Sprawdź odczyt i zapis przez unikalny plik testowy; usuń tylko własny plik po sprawdzeniu. Sprawdź dostęp do kompletnego repozytorium. Przy braku dostępu lub zapisu wyjaśnij problem prostym językiem, bez pozorowania zakończenia instalacji. Nie proś o hasło lub token w czacie.
 
 ## Instalacja
-Dla nowej przestrzeni umieść kompletną kopię narzędzia w ROOT/narzedzie. Użyj dostępnego pobierania lub git; nie wymagaj terminala od klienta. Nie uruchamiaj nieprzeczytanych skryptów internetowych. Nie wykonuj push ani nie zmieniaj widoczności repozytorium.
+Umieść narzędzie w ROOT/narzedzie, chyba że ROOT już zawiera jego kompletną kopię. Nie instaluj duplikatu. Nie uruchamiaj nieprzeczytanych skryptów internetowych, nie wykonuj push ani zmiany widoczności repozytorium.
 
-Jeżeli komplet narzędzia jest już lokalnie, odczytaj VERSION i nie instaluj drugiej kopii. Jeżeli ROOT jest bezpośrednio katalogiem narzędzia, użyj go bez zagnieżdżania; przestrzegaj .gitignore dla danych prywatnych.
+Przeczytaj SKILL.md, Master Brain, Master Sample oraz moduły onboardingu, profili, zapisu, ofert, stylu, podpisu, demo i kontroli. Wersję i rzeczywisty SHA zachowaj do diagnostyki, nie ogłaszaj ich klientowi przy zwykłej konfiguracji.
 
-Przeczytaj SKILL.md i moduły wskazane dla konfiguracji, profili, zapisu, metodologii, Master Sample, ofert, follow-upów, stylu i kontroli. Zanotuj rzeczywistą wersję, a SHA tylko gdy jest znane. Brak pełnej instrukcji oznacza instalację niekompletną.
+Jeżeli narzędzie jest w podfolderze, przygotuj w ROOT START.md wskazujący narzedzie/SKILL.md i oba prywatne profile, z oznaczeniem installation_mode: ready. Nie nadpisuj obcego pliku. Wskaż tam: "Przy nowej sprawie odczytaj instrukcje i profile. Nie instaluj ponownie. Nie pokazuj ścieżek ani rewizji. Po pierwszym zapisie uruchom demo-workflow". Bezpiecznie uzupełnij ROOT/AGENTS.md; zachowaj cudze instrukcje. Sam plik nie gwarantuje automatycznego odczytu przez każdą aplikację.
 
-W wariancie ROOT/narzedzie przygotuj w ROOT plik START.md z oznaczeniem "installation_mode: ready" i faktycznymi ścieżkami do narzedzie/SKILL.md, profil/company-profile.md i profil/user-style.md. Zapisz w nim: "Przy nowej sprawie odczytaj instrukcje i profile; nie instaluj narzędzia ponownie". Nie nadpisuj obcego START.md bez uzgodnienia.
+## Konfiguracja i pierwszy rezultat
+Najpierw odczytaj istniejące profile. Nowy użytkownik: wykonaj wyłącznie kanoniczne Q01-Q16. Istniejący profil: wykorzystaj odpowiedzi, migruj schemat według company-profile.md i dopytaj tylko o istotne braki. Nie zeruj profili.
 
-Utwórz albo bezpiecznie uzupełnij ROOT/AGENTS.md o wskazanie tego START.md; zachowaj cudze instrukcje. Odczyt AGENTS.md zależy od aplikacji. Dlatego komenda w nowej rozmowie ma jawnie nakazywać odczyt START.md. Samo umieszczenie pliku na dysku nie gwarantuje jego automatycznego wczytania.
+Pokaż podsumowanie firmy, wybranego języka i gotowego podpisu. Nie pokazuj reguł Master Brain ani technicznych parametrów. Po akceptacji zapisz i rzeczywiście odczytaj profile według local-workspace.md. Następnie automatycznie wykonaj demo-workflow.md z assets/demo-offer.json.
 
-## Konfiguracja
-Najpierw sprawdź profile. Jeżeli oba są zatwierdzone i kompletne, nie powtarzaj wywiadu. W przeciwnym razie wykonaj references/onboarding.md. Po akceptacji danych zapisz profile według references/local-workspace.md i wykonaj odczyt kontrolny. Nie kończ na "zapamiętałem".
+Nie kończ prośbą "przetestuj w nowej rozmowie". Klient otrzymuje komunikat gotowości oraz fikcyjny przykładowy mail. Nie pokazuj folderów, wersji profili, kart plików ani raportu testowego. Błędy wymagające działania klienta wyjaśnij krótko i uczciwie.
 
-Podaj rzeczywistą ścieżkę, nazwę firmy, wersję narzędzia i rewizje zapisanych profili. Jeżeli zapis jest częściowy, wyraźnie to powiedz. Nie każ pobierać i ponownie dodawać profili.
+## Dalsza praca
+"Piszemy nowego maila" i "Piszemy follow-up" uruchamiają odpowiednie workflow po odczycie aktualnych profili. W nowej sesji jawne polecenie odczytu START.md jest wariantem awaryjnym, gdy instrukcja nie została wczytana. Nie wymagaj nowej sesji jako testu po onboardingu. Przy każdym starcie sam sprawdzaj dostęp do zapisanych danych.
 
-## Test i codzienna praca
-Poproś o nową rozmowę Work z tym samym folderem i komendę: "Przeczytaj START.md z tego folderu. Sprawdź konfigurację Wedding Mail Assistant, odczytując oba profile z dysku". Nie deklaruj wykonania testu nowej sesji bez rzeczywistego testu.
-
-Nowa oferta: "Przeczytaj START.md z tego folderu. Piszemy nowego maila". W już skonfigurowanej rozmowie wystarcza krótsze polecenie. Zawsze odczytaj aktualne profile przed nową sprawą.
-
-## Aktualizacja narzędzia
-Aktualizuj tylko ROOT/narzedzie. Sprawdź wersję, zmiany i zgodność schematu. Nie nadpisuj ROOT/profil, kopii ani plików klienta. Zachowaj poprzedni stan instrukcji przed aktualizacją. Brak dostępu do GitHuba nie blokuje pracy z kompletną lokalną kopią; model AI nadal może wymagać połączenia z dostawcą.
+## Aktualizacje
+Aktualizuj tylko kopię narzędzia, zachowując poprzedni stan. Nie nadpisuj profilów ani ich kopii. Migrację schematu wykonuj osobno po zatwierdzeniu oczyszczonego podsumowania. Zaktualizuj własną instrukcję startową w ROOT, jeżeli odwołuje się do starego procesu, zachowując instrukcje klienta. Brak dostępu do GitHuba nie blokuje korzystania z kompletnej lokalnej kopii.

@@ -1,0 +1,45 @@
+{
+  "scenario_id": "demo-dj-001",
+  "is_demo": true,
+  "approved_for_demo": true,
+  "currency": "PLN",
+  "couple": {
+    "first_names": [
+      "Anna",
+      "Piotr"
+    ],
+    "date": null,
+    "guests": 100
+  },
+  "fathom_notes": "FIKCYJNE NOTATKI. Anna i Piotr planują wesele dla około 100 gości. Chcą swobodnej atmosfery, muzyki z lat 90. i 2000. oraz klasyków dla starszych gości. Zależy im na naturalnym prowadzeniu i zabawach bez angażowania kogokolwiek na siłę. Planują pierwszy taniec i podziękowania dla rodziców. Wybrali ciężki dym oraz fontanny iskier. Pakiet obejmuje obsługę muzyczną i konferansjerską, nagłośnienie i oświetlenie przez 12 godzin. Konkretna data wesela nie jest podana; nie deklarować rezerwacji ani dostępności. Umówiono rozmowę jutro o 18:00 w sprawie potwierdzenia decyzji.",
+  "service": {
+    "name": "Pakiet weselny: DJ i konferansjer",
+    "hours": 12,
+    "headcount": null,
+    "price": 6500
+  },
+  "travel": {
+    "included_in_base": false,
+    "price": 500
+  },
+  "lodging": {
+    "provided_by": "client",
+    "nights": 2,
+    "price": null,
+    "included_in_total": false
+  },
+  "selected_extras": [
+    {
+      "name": "Ciężki dym",
+      "price": 600
+    },
+    {
+      "name": "Fontanny iskier",
+      "price": 300
+    }
+  ],
+  "total_payable": 7900,
+  "attachments": [],
+  "cta": "Umawiamy się na rozmowę jutro o 18:00, aby potwierdzić decyzję.",
+  "never_persist_to_company_or_style": true
+}

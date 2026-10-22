@@ -1,60 +1,27 @@
 # Wedding Mail Assistant by Jester Ads
-## Instrukcja dla klienta: ChatGPT Desktop / Work, wersja 1.2.0
+## Jak zacząć
+Uruchom aplikację-agenta, w której Jester Ads pomogło przygotować dostęp do prywatnej przestrzeni pracy. Wymagany jest odczyt i zapis; zwykły czat bez tych uprawnień nie zapisze trwale ustawień. Zgody nadajesz samodzielnie, a potem plikami zajmuje się asystent.
 
-Raz konfigurujesz firmę. Później podajesz notatki z rozmowy z parą, potwierdzasz ofertę i otrzymujesz gotowy mail. Profil firmy oraz styl są zapisywane w Twoim folderze. Nie trzeba ręcznie pobierać, kopiować ani ponownie dodawać profili.
+Wklej polecenie:
 
-### 1. Otwórz lokalny Work
-Zainstaluj lub zaktualizuj oficjalną aplikację ChatGPT na komputerze i zaloguj się. W menu wybierz ChatGPT, następnie Work. Potrzebujesz trybu z dostępem do lokalnego folderu, nie zwykłego czatu ani Work działającego wyłącznie w chmurze.
+Uruchom Wedding Mail Assistant by Jester Ads z repozytorium https://github.com/morssmor129/wedding-mail-assistant w udostępnionej przeze mnie przestrzeni pracy. Przeczytaj START.md i wykonaj instrukcje. Sprawdź dostęp do zapisu, zachowaj istniejące ustawienia i poprowadź konfigurację firmy. Po zatwierdzeniu sam zapisz dane, sprawdź ich odczyt i pokaż przykładowy mail. Nie publikuj moich danych. Nie pokazuj technicznych raportów; jeżeli coś nie działa, wyjaśnij to prostym językiem.
 
-Gdy nie widzisz Work lub otwierania folderu, sprawdź aktualizacje aplikacji i uprawnienia konta albo administratora. Sam płatny plan nie gwarantuje dostępności tej funkcji. Bez odczytu i zapisu plików instalacja w tym wariancie nie jest ukończona.
+Repozytorium musi być dostępne dla odbiorcy. Przy odmowie dostępu skontaktuj się z Jester Ads. Nie przekazuj haseł ani tokenów w rozmowie.
 
-### 2. Wskaż folder
-Utwórz na komputerze pusty folder "Wedding Mail Assistant", na przykład w Dokumentach. Otwórz go w Work i zezwól na odczyt oraz zapis w tym folderze. Nie udostępniaj całego dysku.
+## Jednorazowa konfiguracja
+Odpowiedz na pytania w czterech sekcjach: firma, oferta, sposób pisania i podpis. Przy pytaniach wyboru wskaż opcję lub jej literę. Gdy coś Cię nie dotyczy, napisz to. Nie podajesz ceny oferty podstawowej, kilometrówki ani kosztów noclegu. Możesz podać katalog cen atrakcji i dodatkowych usług.
 
-To jednorazowe przygotowanie przestrzeni. Nie musisz tworzyć projektu online ani instalować terminala, Git czy klucza API. Aplikacja może poprosić o dodatkowe zgody na dostęp lub pobieranie.
+Sprawdź podsumowanie i zatwierdź je. Asystent zapisze ustawienia, sprawdzi je i pokaże przykładowy mail. To demonstracja na fikcyjnych danych, nie oferta dla prawdziwej pary ani zmiana Twojego cennika. Nie musisz wykonywać osobnego testu lub zapisywać profili ręcznie.
 
-### 3. Wklej polecenie uruchomienia
+## Codzienna praca
+Wracaj do tej samej przestrzeni pracy. Wpisz: "Piszemy nowego maila". Wklej Fathoma lub notatki i potwierdź ostateczną cenę, zakres, dodatki, dojazd, nocleg oraz planowane załączniki. Otrzymasz temat i gotową treść do poczty. Asystent korzysta z zapisanej konfiguracji.
 
-Uruchom Wedding Mail Assistant by Jester Ads w otwartym przeze mnie folderze lokalnym. Otwórz repozytorium https://github.com/morssmor129/wedding-mail-assistant i przeczytaj pełny START.md. Najpierw sprawdź rzeczywisty dostęp do odczytu i zapisu w tym folderze. Pobierz komplet narzędzia do podfolderu narzedzie. Przeprowadź konfigurację mojej firmy, pokaż podsumowanie do zatwierdzenia, a po akceptacji sam zapisz profile i sprawdź je ponownym odczytem. Nie nadpisuj istniejących profili i nie publikuj moich danych. Nie każ mi pobierać ani ponownie wgrywać profili. Jeżeli nie możesz odczytać repozytorium lub zapisać plików, powiedz o tym zamiast ogłaszać instalację.
+Follow-up: wpisz "Piszemy follow-up" i podaj poprzedni mail oraz sytuację. Wiadomości wysyłasz samodzielnie. PDF oferty i projekt umowy przygotowujesz i dołączasz sam; narzędzie tylko o nich wspomina po Twoim potwierdzeniu.
 
-Repozytorium musi być dla Ciebie dostępne. Przy błędzie 404 lub braku uprawnień skontaktuj się z Jester Ads. Nie wklejaj haseł ani tokenów do rozmowy.
+## Zmiana stylu
+Napisz np. "Od teraz zawsze zaczynaj od Cześć. Zapisz to jako stałą preferencję". Asystent sam aktualizuje ustawienia i sprawdza zapis. "W tym mailu napisz bardziej elegancko" dotyczy tylko jednej wiadomości.
 
-### 4. Odpowiedz na pytania
-Asystent zapyta o nazwę firmy, usługi, zespół, dodatki, dojazd, rezerwację i sposób pisania. Odpowiadasz normalnie, swoimi słowami. Na końcu sprawdzasz podsumowanie i piszesz:
+## Aktualizacja i pomoc
+Aby pobrać nowe instrukcje, napisz: "Zaktualizuj Wedding Mail Assistant z repozytorium źródłowego, zachowując moje dane i styl". Gdy potrzebne jest uporządkowanie starszej konfiguracji, zatwierdź nowe podsumowanie; nie odpowiadasz ponownie na znane pytania.
 
-Zatwierdzam. Zapisz profil firmy i styl.
-
-Asystent powinien sam utworzyć profil/company-profile.md i profil/user-style.md, odczytać je oraz potwierdzić rzeczywiste ścieżki i rewizje. "Zapamiętałem" bez odczytu plików nie jest zakończeniem konfiguracji.
-
-### 5. Sprawdź nową rozmowę
-Otwórz nową rozmowę Work z dostępem do tego samego folderu. Wpisz:
-
-Przeczytaj START.md z tego folderu. Sprawdź konfigurację Wedding Mail Assistant, odczytując profile z dysku. Podaj nazwę firmy, ścieżki i rewizje obu plików.
-
-Nie podawaj ponownie danych firmy. Mają zostać odczytane z zapisanych plików. Jeżeli asystent ich nie widzi, sprawdź wybrany folder i uprawnienia. Nie usuwaj dotychczasowej konfiguracji i nie zaczynaj od zera.
-
-### 6. Korzystaj na co dzień
-W nowej rozmowie Work, w tym samym folderze, wpisz:
-
-Przeczytaj START.md z tego folderu. Piszemy nowego maila.
-
-Wklej podsumowanie Fathoma albo notatki. Asystent korzysta z profili i dopytuje tylko o niezbędne braki oraz ostateczną cenę, zakres, dodatki, dojazd i załączniki. Otrzymujesz temat i treść do skopiowania do poczty.
-
-W rozmowie, która już wczytała konfigurację, wystarczy "Piszemy nowego maila". Follow-up uruchamiasz komendą "Piszemy follow-up" i przekazujesz poprzednią ofertę oraz kontekst odpowiedzi.
-
-PDF oferty i projekt umowy przygotowujesz oraz dołączasz samodzielnie. Narzędzie tylko wspomina o nich w treści po Twoim potwierdzeniu. Nie wysyła maili, nie rezerwuje terminów i nie wykonuje działań w tle.
-
-### 7. Aktualizuj styl rozmową
-Przykład:
-
-Od teraz zawsze zaczynaj od Cześć, zamiast Dzień dobry. Zapisz to jako moją stałą preferencję.
-
-Asystent powinien zachować kopię poprzedniej wersji, uaktualnić profil, zwiększyć rewizję i sprawdzić zapis. Nie musisz podmieniać plików. "W tym mailu napisz bardziej elegancko" zmienia tylko pojedynczą wiadomość.
-
-### Pamiętaj
-Nowa rozmowa musi mieć dostęp do tego samego folderu. Lokalny zapis nie oznacza pracy AI offline ani braku przetwarzania kontekstu w chmurze. Nie publikuj prywatnego folderu i nie przekazuj wypełnionych profili innym firmom. Aktualizacje narzędzia mają zachować Twoje profile.
-
-Instrukcja platformy sprawdzona 22.10.2026 w oficjalnym OpenAI Help Center:
-https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex
-
-Test instalacji na Twoim komputerze oraz odczytu profili w nowej rozmowie jest konieczny. Kontrola plików repozytorium nie zastępuje tego testu.
+Gdy nowa rozmowa nie rozpoznaje narzędzia, napisz: "Odczytaj instrukcję startową Wedding Mail Assistant w mojej przestrzeni pracy". Przy problemie z dostępem asystent powinien wyjaśnić, co trzeba poprawić, a nie udawać zapisu. Lokalna konfiguracja nie oznacza działania AI offline.

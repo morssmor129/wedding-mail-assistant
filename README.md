@@ -1,29 +1,25 @@
 # Wedding Mail Assistant by Jester Ads
-Wersja 1.2.0. Narzędzie do przygotowywania po polsku ofert i follow-upów dla usługodawców ślubnych. To instrukcje i wzorce wykonywane przez agenta AI, nie samodzielna aplikacja.
+Wersja 1.3.0. Oferty i follow-upy po polsku dla usługodawców ślubnych.
 
-## Uruchomienie
-Główny wariant: ChatGPT Desktop, lokalny Work z dostępem do prywatnego folderu. Jednorazowo wybierz folder, przyznaj odczyt i zapis, a następnie uruchom konfigurację. Asystent sam obsługuje profile, bez pobierania i ponownego wgrywania ich przez klienta.
+## Dla klienta
+Raz konfigurujesz firmę, odpowiadając na uporządkowane pytania. Po zatwierdzeniu asystent zapisuje ustawienia, sprawdza je i od razu pokazuje fikcyjny przykładowy mail. Przy kolejnych ofertach korzysta z profilu, a Ty podajesz notatki i warunki konkretnego zlecenia. Nie zarządzasz ręcznie plikami.
 
-- Instrukcja dla klienta: [INSTRUKCJA-KLIENTA.md](INSTRUKCJA-KLIENTA.md).
-- Punkt startowy dla asystenta: [START.md](START.md).
-- Zasady: [SKILL.md](SKILL.md).
+[Instrukcja klienta](INSTRUKCJA-KLIENTA.md). [Uruchomienie dla asystenta](START.md).
 
-Polecenie do wklejenia w lokalnym Work z otwartym folderem:
+Wymagana jest aplikacja-agenta z dostępem do odczytu i zapisu w wydzielonej przestrzeni użytkownika, np. odpowiednio skonfigurowany lokalny Work. Sam płatny plan lub zwykły czat nie daje takich uprawnień. Zachowaj wymagane zgody. Nie obiecujemy działania offline ani bez limitów.
 
-> Przeczytaj START.md z repozytorium https://github.com/morssmor129/wedding-mail-assistant i uruchom Wedding Mail Assistant w otwartym folderze. Sprawdź odczyt i zapis. Pobierz komplet narzędzia do podfolderu narzedzie. Przeprowadź onboarding, a po mojej akceptacji sam zapisz profile i sprawdź je przez odczyt. Nie nadpisuj moich danych i nie publikuj ich. Przy braku dostępu nie ogłaszaj instalacji.
+## Zmiany 1.3
+- Jeden formularz: 16 pytań, cztery stałe sekcje i niezmienne opcje. Bez pytania o cenę podstawową, VAT, kilometrówkę lub koszty noclegu.
+- Osobne katalogi atrakcji, dodatkowych występów i partnerów. Tylko tam zapisujemy ceny standardowe. Realna wycena jest potwierdzana przed mailem.
+- Stały podpis: zwrot, imię i nazwisko, firma, wskazany link.
+- Master Brain nie jest menu ustawień klienta. Podsumowanie nie pokazuje limitów długości ani parametrów metodologii.
+- Zapis i odczyt sprawdzane wewnętrznie, a zamiast komunikatów technicznych automatyczny przykład. Scenariusz demo: 6500 + 500 + 600 + 300 = 7900 zł oraz nocleg na dwie doby po stronie klienta. Dane demo nie trafiają do profili.
 
-Repozytorium musi być dostępne dla odbiorcy. Sam link do repozytorium prywatnego nie nadaje uprawnień. Nie proś o hasła ani tokeny w czacie.
+## Dla autora
+Pytania: [assets/onboarding-questions.json](assets/onboarding-questions.json). Scenariusz: [assets/demo-offer.json](assets/demo-offer.json). Zapis: [references/local-workspace.md](references/local-workspace.md). Testy: [tests/validate_package.py](tests/validate_package.py). Historia: [CHANGELOG.md](CHANGELOG.md).
 
-## Działanie
-Publiczna lub udostępniona kopia narzędzia trafia do podfolderu narzedzie. Prywatne dane pozostają obok, w profil/company-profile.md i profil/user-style.md. Zatwierdzone stałe zmiany mają aktualizować pliki z zachowaniem kopii poprzedniej rewizji oraz odczytem kontrolnym. Nowa rozmowa musi mieć dostęp do tego samego folderu.
+Nie zmieniono Master Sample v3.0. Zmiany Core dotyczą wyłącznie zatwierdzonych granic konfiguracji i stałego podpisu. Pliki są otwarte, a instrukcje nie stanowią ochrony kryptograficznej. Zmiana repozytorium nie aktualizuje automatycznie już pobranej kopii klienta.
 
-W nowej rozmowie wpisz: "Przeczytaj START.md z tego folderu. Piszemy nowego maila". Po pierwszej konfiguracji nie powtarzaj wywiadu; potwierdzaj wycenę i zakres konkretnej oferty.
+GitHub jest źródłem narzędzia, nie bazą danych klientów. Nie publikuj wypełnionych profili i Fathoma. Aktualizacja ma zachować prywatne ustawienia i kopie. Repozytorium prywatne wymaga dostępu odbiorcy; sam link nie nadaje uprawnień.
 
-Master Brain i zatwierdzony Master Sample v3.0 pozostają bez zmian. Styl użytkownika jest od nich oddzielony. Maile są bez Markdowna i długich myślników. PDF i projekt umowy to tylko planowane załączniki do wzmianki; narzędzie ich nie czyta ani nie tworzy. Nie wysyła maili i nie rezerwuje terminów.
-
-## Granice
-Dostęp do lokalnego Work zależy od aplikacji, planu i uprawnień. Sandbox i zwykły czat nie są trwałym folderem klienta. Nie obiecujemy instalacji bez zgód, nieograniczonego użycia ani działania offline. AGENTS.md nie jest gwarancją automatycznego wczytania we wszystkich aplikacjach.
-
-Sprawdź [QA-REPORT.md](QA-REPORT.md). Walidacja plików nie zastępuje testu na komputerze klienta. Nie publikuj profili, Fathoma ani maili. .gitignore ogranicza przypadkowe dodanie danych, nie zastępuje kontroli przed publikacją.
-
-Wariant Projects 1.1 jest zachowany w archiwum ZIP jako alternatywa wymagająca ręcznego zapisu źródeł. Nie jest główną ścieżką instalacji desktopowej. Pochodzenie: [references/sources.md](references/sources.md). marketingskills jest inspiracją, nie dołączoną zależnością. Nie dodano telemetrii, serwera profili ani nowej licencji bez decyzji autora.
+Narzędzie przygotowuje tekst. Nie wysyła maili, nie rezerwuje terminów, nie tworzy spotkań i nie analizuje załączników. [Pochodzenie metodologii](references/sources.md). [Zakres weryfikacji](QA-REPORT.md).

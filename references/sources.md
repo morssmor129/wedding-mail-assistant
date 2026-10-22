@@ -1,8 +1,8 @@
 # Pochodzenie i granice
-Wersja 1.2.0 aktualizuje pakiet 1.1.0 autora. Zachowuje bez zmiany bajtów Master Sample v3.0 i pierwotny Master Brain. Nowe instrukcje dotyczą lokalnego zapisu, konfiguracji i użytkowania.
+Wersja 1.3.0 aktualizuje wersję 1.2.0 na podstawie zatwierdzonych uwag autora: stały formularz, granice profili, podpis i automatyczny przykład. Master Sample v3.0 pozostaje bez zmiany bajtów. Master Brain zachowuje metodologię; zmieniono zatwierdzone granice konfiguracji i podpisu.
 
 ## Dokumentacja platformy
-Sprawdzono 22.10.2026:
+Odnośnik z dokumentacji pierwotnego wdrożenia 1.2.0 (nie sprawdzano ponownie interfejsu platformy w aktualizacji 1.3):
 https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex
 OpenAI opisuje wybór ChatGPT > Work w aplikacji desktopowej, otwieranie lokalnego folderu i zależność od uprawnień. Wiadomości oraz kontekst mogą być przechowywane w chmurze mimo pracy lokalnej.
 

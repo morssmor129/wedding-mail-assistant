@@ -1,28 +1,23 @@
 WMA COMPANY PROFILE - WZÓR, NIE JEST PROFILEM KLIENTA
 profile_type: company
-schema_version: 1
-tool_version: 1.2.0
+schema_version: 2
+tool_version: 1.3.0
 company_key: [identyfikator-firmy]
 revision: 0
 approval: TEMPLATE
 updated_at: nieustalona
-change_note: pusty wzór; nie dodawaj go do źródeł jako wypełnionego profilu
+change_note: pusty wzór
 
-Nazwa firmy / marka: [uzupełnij]
-Branża / rodzaj usługi: [uzupełnij]
-Nadawca / osoba kontaktowa: [uzupełnij]
-Miejscowość i obszar działania: [uzupełnij]
-Instagram / WWW / portfolio: [uzupełnij lub nieustalone]
-Typowy skład i role: [uzupełnij]
-Oferta podstawowa / pakiety / godziny / rezultat: [uzupełnij]
-Dodatki i współpracownicy: [uzupełnij lub nie dotyczy]
-Orientacyjny cennik: [uzupełnij lub nieustalone]
-Waluta i sposób prezentacji kwot: [kwoty końcowe / brutto / netto / nieustalone]
-Dojazd / nocleg / nadgodziny: [uzupełnij]
-Rzeczywiste wyróżniki: [uzupełnij]
-Proces rezerwacji i płatności: [uzupełnij]
-Podpis i stopka: [wyłączone lub dokładna zatwierdzona treść]
-Domyślne planowane załączniki: [brak / PDF / projekt umowy / oba]
-Stałe ograniczenia oferty: [uzupełnij lub nieustalone]
-
-Przy każdej nowej ofercie osobno potwierdź cenę końcową, zakres, dodatki, dojazd i planowane załączniki. Nie zapisuj tu danych konkretnych par ani potwierdzenia dostępności terminu.
+Nazwa firmy / marka: [Q01]
+Główne usługi: [Q01]
+Instagram / WWW / portfolio: [Q02 lub brak]
+Link do podpisu: [Q02 lub brak]
+Baza i obszar działania: [Q03]
+Warianty składu i role: [Q04]
+Zakres pakietów / czas / rezultat: [Q05, bez cen podstawowych]
+Katalog atrakcji i dodatków: [Q06, nazwa oraz stała cena lub indywidualnie]
+Dodatkowe występy muzyczne: [Q07, nazwa oraz stała cena lub indywidualnie]
+Współpracownicy: [Q08, usługa; w ofercie czy polecenie; stała cena lub indywidualnie]
+Wyróżniki: [Q09]
+Kroki rezerwacji: [Q10, bez kwot]
+Imię i nazwisko nadawcy: [Q15]

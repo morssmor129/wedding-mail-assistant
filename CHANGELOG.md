@@ -1,3 +1,13 @@
+# Zmiany 1.3.0 - 2026-10-22
+
+Zatwierdzone przez autora: stałe Q01-Q16 w czterech sekcjach; usunięcie wyceny podstawowej, VAT i kosztów logistycznych z onboardingu; osobne katalogi dodatków, muzyków i partnerów; stała konstrukcja podpisu; oddzielenie reguł Master Brain od profilu i podsumowania; schemat profili 2 z migracją bez utraty kopii.
+
+Po akceptacji automatyczny fikcyjny przykład oferty zamiast polecenia samodzielnego testu. Suma 7900 zł, nocleg na dwie doby zapewnia klient, CTA jutro o 18:00. Demo jest odseparowane od ustawień i rzeczywistych spraw. Zapis i odczyt pozostają obowiązkowe, ale bez ścieżek, rewizji i kart plików w zwykłej rozmowie.
+
+Master Sample v3.0 zachowany bajt w bajt. Master Brain zmieniony tylko w zakresie zatwierdzonego podpisu i granic konfiguracji. Dodano kanoniczny formularz, fixture, renderer i kontrole regresji. Testy statyczne nie są testem aplikacji desktopowej.
+
+---
+
 # 1.2.0 - 22.10.2026
 - Główna instalacja dla lokalnego Work w ChatGPT Desktop.
 - START.md z testem rzeczywistego zapisu i procesem pobrania narzędzia.

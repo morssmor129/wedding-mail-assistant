@@ -1,0 +1,187 @@
+{
+  "form_version": "1.0.0",
+  "sections": [
+    {
+      "id": "A",
+      "title": "Firma i obszar działania"
+    },
+    {
+      "id": "B",
+      "title": "Oferta i możliwości współpracy"
+    },
+    {
+      "id": "C",
+      "title": "Indywidualny język użytkownika"
+    },
+    {
+      "id": "D",
+      "title": "Nadawca i podpis"
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q01",
+      "section": "A",
+      "text": "Jak nazywa się Twoja firma i jakie główne usługi świadczysz?",
+      "type": "free_text"
+    },
+    {
+      "id": "Q02",
+      "section": "A",
+      "text": "Podaj link do firmowego Instagrama oraz strony internetowej lub portfolio, jeżeli je posiadasz. Wskaż jeden link, który mamy umieszczać w podpisie maila.",
+      "type": "free_text"
+    },
+    {
+      "id": "Q03",
+      "section": "A",
+      "text": "W jakiej miejscowości znajduje się Twoja baza i na jakim obszarze realizujesz zlecenia?",
+      "type": "free_text"
+    },
+    {
+      "id": "Q04",
+      "section": "B",
+      "text": "W jakim składzie realizujecie usługi? Opisz dostępne warianty i role poszczególnych osób, na przykład solo, duet lub większy zespół.",
+      "type": "free_text"
+    },
+    {
+      "id": "Q05",
+      "section": "B",
+      "text": "Co obejmuje Wasza podstawowa usługa lub poszczególne pakiety? Opisz zakres, czas realizacji i to, co otrzymuje klient. Na tym etapie nie podawaj ceny oferty podstawowej.",
+      "type": "free_text"
+    },
+    {
+      "id": "Q06",
+      "section": "B",
+      "text": "Jakie dodatki i atrakcje weselne oferujecie, na przykład ciężki dym, fontanny iskier lub wiatraki? Wymień je wraz z cenami. Przy pozycji bez stałej ceny wpisz „wycena indywidualna”. Jeśli nie oferujecie dodatków, wpisz „brak”.",
+      "type": "free_text"
+    },
+    {
+      "id": "Q07",
+      "section": "B",
+      "text": "Czy oferujecie dodatkowe występy muzyczne, na przykład saksofonistę, perkusistę, wokalistę lub innych muzyków? Jeśli tak, wymień dostępne usługi i podaj przy każdej stałą cenę albo „wycena indywidualna”.",
+      "type": "free_text"
+    },
+    {
+      "id": "Q08",
+      "section": "B",
+      "text": "Czy współpracujecie z innymi usługodawcami, na przykład fotografem, filmowcem, obsługą fotobudki, dekoratorem lub wedding plannerem? Jeśli tak, wymień te usługi i określ, czy są częścią Waszej oferty, czy tylko polecacie daną osobę. Podaj stałą cenę, jeśli ją macie, albo wpisz „ustalana indywidualnie”.",
+      "type": "free_text"
+    },
+    {
+      "id": "Q09",
+      "section": "B",
+      "text": "Co wyróżnia Wasz sposób pracy i za co klienci szczególnie Was cenią? Podaj 2–3 konkretne rzeczy, które warto pokazywać w mailach.",
+      "type": "free_text"
+    },
+    {
+      "id": "Q10",
+      "section": "B",
+      "text": "Jak wygląda przejście od zaakceptowania oferty do rezerwacji? Opisz kolejne kroki, na przykład przesłanie danych, podpisanie umowy online i wpłatę zadatku. Bez podawania kwot.",
+      "type": "free_text"
+    },
+    {
+      "id": "Q11",
+      "section": "C",
+      "text": "Jaki ton najlepiej pasuje do Twojej marki?",
+      "type": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "label": "Swobodny i energiczny."
+        },
+        {
+          "id": "B",
+          "label": "Ciepły i spokojny."
+        },
+        {
+          "id": "C",
+          "label": "Rzeczowy i bezpośredni."
+        },
+        {
+          "id": "D",
+          "label": "Elegancki, ale naturalny."
+        }
+      ]
+    },
+    {
+      "id": "Q12",
+      "section": "C",
+      "text": "Jak chcesz witać Parę w mailach?",
+      "type": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "label": "Cześć"
+        },
+        {
+          "id": "B",
+          "label": "Hej"
+        },
+        {
+          "id": "C",
+          "label": "Dzień dobry"
+        }
+      ]
+    },
+    {
+      "id": "Q13",
+      "section": "C",
+      "text": "W jakiej formie mamy pisać?",
+      "type": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "label": "„Ja” jako jedna osoba."
+        },
+        {
+          "id": "B",
+          "label": "„My” jako firma lub zespół."
+        },
+        {
+          "id": "C",
+          "label": "„Ja” jako nadawca, ale „my” przy opisie pracy zespołu."
+        }
+      ]
+    },
+    {
+      "id": "Q14",
+      "section": "C",
+      "text": "Czy masz charakterystyczne zwroty, których chcesz używać, albo sformułowania, których mamy unikać? Jeśli nie, wpisz „brak preferencji”. Opcjonalnie możesz wkleić swój przykładowy mail bez danych klientów.",
+      "type": "free_text"
+    },
+    {
+      "id": "Q15",
+      "section": "D",
+      "text": "Podaj imię i nazwisko osoby, która będzie podpisywać wiadomości.",
+      "type": "free_text"
+    },
+    {
+      "id": "Q16",
+      "section": "D",
+      "text": "Jakim zwrotem chcesz kończyć wiadomości?",
+      "type": "single_choice",
+      "options": [
+        {
+          "id": "A",
+          "label": "Jesteśmy w kontakcie"
+        },
+        {
+          "id": "B",
+          "label": "Pozdrawiam"
+        },
+        {
+          "id": "C",
+          "label": "Pozdrawiamy"
+        },
+        {
+          "id": "D",
+          "label": "Do usłyszenia"
+        },
+        {
+          "id": "E",
+          "label": "Inny zwrot, podaj jaki."
+        }
+      ]
+    }
+  ]
+}

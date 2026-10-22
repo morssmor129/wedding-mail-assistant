@@ -7,3 +7,5 @@
 5. Nie wymagaj ponownego podawania ceny tylko do przypomnienia bez zmiany warunków. Jeśli follow-up wprowadza nową cenę, rabat, zakres albo blokadę terminu, uzyskaj aktualne potwierdzenie. Nie potwierdzaj ponownie dostępności tylko dlatego, że była w starej ofercie.
 6. Celuj w 70-130 słów bez sztucznego rozciągania. Sprawdź fakty, format i brak presji. Oddaj sam temat i treść.
 7. Nie ustawiaj harmonogramu, nie wysyłaj wiadomości i nie sugeruj, że kontakt został wykonany. To narzędzie przygotowuje tekst.
+
+Zastosuj stałą konstrukcję podpisu z signature.md. Nie przejmuj wyceny, pary ani CTA z poprzedniej demonstracji; follow-up wymaga rzeczywistej sprawy.

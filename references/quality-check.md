@@ -1,19 +1,17 @@
-# Kontrola jakości przed finalnym mailem
+# Wewnętrzna kontrola jakości
+Nie dołączaj raportu do maila ani podsumowania konfiguracji.
 
-Sprawdź wewnętrznie, bez doklejania raportu do maila:
-1. Odczytano właściwy profil firmy i styl; nie wykorzystano konfiguracji innego użytkownika, fikcyjnych faktów z sample ani pustego wzoru.
-2. Poprawne są imiona, miejsce i data, jeśli są znane. Nie skopiowano bez weryfikacji "wczoraj" lub "we wtorek" ze starego Fathoma.
-3. Ostateczna cena nowej oferty, zakres, skład, czas, dopłaty i dojazd mają jawne potwierdzenie dla tej sprawy. Kwota końcowa nie powstała z domysłu.
-4. Opcje są oddzielone od ustalonej ceny. Nie doliczono niezamówionego dodatku ani nie obiecano szerszej usługi.
-5. Nie zadeklarowano blokady lub rezerwacji przy nieustalonej dacie; nie wymyślono dostępności ani terminu odpowiedzi.
-6. Personalizacja pochodzi z rozmowy. Pozytywna wizja ma pierwszeństwo. Istotna cecha łączy się z realną korzyścią bez mechanicznego powtarzania schematu.
-7. Oferta ma naturalne akapity, jedno wykonalne CTA i zaproszenie do pytań. Styl odpowiada aktualnym zatwierdzonym preferencjom.
-8. Wzmianka o PDF lub projekcie umowy występuje tylko po potwierdzeniu zamiaru ich dołączenia. Nie analizowano dokumentów jako części zadania.
-9. Oferta celuje w 180-250 słów treści, follow-up w 70-130, bez tematu i podpisu. Zachowaj niezbędne warunki, nie dodawaj wypełniaczy.
-10. Treść nie zawiera Markdowna, HTML, bloków kodu, em dasha U+2014 ani półpauzy U+2013. Dopuszczaj zwykły znak ASCII "-". Nie dodawaj emoji bez ustawienia w profilu.
-11. Podpis i stopka są zgodne z profilem; nie ma reklamy Jester Ads ani informacji o działaniu AI.
-12. Wynik obejmuje tylko temat i treść. Nie dopisuj instrukcji instalacji, aktualizacji profilu ani listy kontrolnej.
+1. Odczytano pełne profile właściwej firmy. Dane demo nie zanieczyściły ustawień ani rzeczywistej oferty.
+2. Onboarding używa kanonicznych pytań w stałej kolejności, odrębnych sekcji i opcji. Nie dodano pytań o ceny podstawowe, VAT lub logistykę. Podsumowanie zawiera tylko firmę, język i podpis, bez zasad Master Brain.
+3. Realna oferta ma potwierdzoną cenę, zakres, skład, czas, wybrane dodatki, dojazd i ewentualny nocleg. Katalog lub Fathom nie zastępują potwierdzenia. W DEMO sprawdź jawny status fikcyjny i dane z demo-offer.json bez kolejnych pytań do klienta.
+4. Suma jest poprawna, opcje nie są doliczone do zamówienia. Demo: 6500 + 500 + 600 + 300 = 7900 zł; dwie doby noclegu zapewnia klient, koszt nie jest wyceniony ani zawarty w sumie. Nie obiecano szerszej usługi ani duetu bez danych.
+5. Imiona i znane daty są poprawne. Nie powstała fikcyjna rezerwacja. W rzeczywistym mailu względne daty wymagają aktualnego potwierdzenia; w demo "jutro o 18:00" jest fikcyjnym CTA, nie spotkaniem w kalendarzu.
+6. Personalizacja wynika z notatek. Pozytywna wizja, potrzeba-rozwiązanie-korzyść i relacja mają pierwszeństwo nad listą parametrów. Bez korpogadki i fałszywej presji.
+7. Oferta zawiera jeden konkretny krok i zaproszenie do pytań. Styl odpowiada profilowi, a podpis ma zwrot, imię i nazwisko, firmę oraz potwierdzony link, gdy istnieje.
+8. Wzmianka o załącznikach ma potwierdzenie dla tego maila. Demo nie ma załączników. Nie analizowano ani nie tworzono PDF-u lub umowy.
+9. Treść oferty: 180-250 słów, follow-up: 70-130, bez tematu i podpisu. Nie pokazuj licznika klientowi i nie zapisuj go w stylu. Usuń wypełniacze, zachowaj warunki.
+10. Brak dosłownych znaczników Markdown, HTML, bloków kodu, U+2014 i U+2013. Dopuszczaj zwykły '-'. Bez nieuzgodnionych emoji i bez reklamy Jester Ads.
+11. Zwykły wynik to temat i treść. Demo ma oznaczenie fikcyjności poza mailem. Brak folderów, rewizji, kart plików i poleceń samodzielnego testowania.
+12. Pierwszy pokaz odbywa się dopiero po prawdziwym zapisie i odczycie. Nie zamieniaj samej generacji pliku w deklarację trwałego zapisu. Błędy komunikuj bez technicznego szumu.
 
-Przy krytycznych brakach zamiast maila zadaj minimalne potrzebne pytanie. Gdy szczegół jest poboczny lub jawnie nieustalony, pomiń go. Nie traktuj nieznanej daty jako zgody na rezerwację.
-
-Po operacji na profilu osobno sprawdź: kompletność pliku, company_key, revision, zgodę na zmianę, zachowanie niezmienionych pól oraz rzetelne oznaczenie stanu zapisu. Nigdy nie traktuj eksportu jako automatycznej aktualizacji projektu.
+Przy realnym krytycznym braku dopytaj. Przy błędzie testu popraw wynik, nie każ klientowi go diagnozować. Nie ogłaszaj testu nowej sesji bez jego wykonania.
