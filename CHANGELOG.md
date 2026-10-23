@@ -1,3 +1,10 @@
+# 1.4.0 - 2026-10-23
+- Daily morning update check; notification only, installation after specific user approval.
+- Real scheduler creation/verification, deduplication and honest handling of unsupported accounts.
+- Stable release manifest and guarded file updates with backup, local-edit warning and rollback.
+- No profile migration or customer data writes during tool updates.
+- Fixed questionnaire, Master Brain, Master Sample and demonstration preserved byte-for-byte.
+
 # Zmiany 1.3.0 - 2026-10-22
 
 Zatwierdzone przez autora: stałe Q01-Q16 w czterech sekcjach; usunięcie wyceny podstawowej, VAT i kosztów logistycznych z onboardingu; osobne katalogi dodatków, muzyków i partnerów; stała konstrukcja podpisu; oddzielenie reguł Master Brain od profilu i podsumowania; schemat profili 2 z migracją bez utraty kopii.

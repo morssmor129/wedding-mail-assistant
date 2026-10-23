@@ -14,3 +14,7 @@ __pycache__/
 *.pyc
 .DS_Store
 Thumbs.db
+
+.wma-updates/
+**/.wma-updates/
+.wma-staging/

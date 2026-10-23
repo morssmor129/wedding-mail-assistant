@@ -1,5 +1,5 @@
 # Wedding Mail Assistant by Jester Ads - START
-Wersja: 1.3.0. Instrukcja dla asystenta.
+Wersja: 1.4.0. Instrukcja dla asystenta.
 Repozytorium: https://github.com/morssmor129/wedding-mail-assistant
 
 ## Przygotowanie przestrzeni
@@ -24,5 +24,14 @@ Nie kończ prośbą "przetestuj w nowej rozmowie". Klient otrzymuje komunikat go
 ## Dalsza praca
 "Piszemy nowego maila" i "Piszemy follow-up" uruchamiają odpowiednie workflow po odczycie aktualnych profili. W nowej sesji jawne polecenie odczytu START.md jest wariantem awaryjnym, gdy instrukcja nie została wczytana. Nie wymagaj nowej sesji jako testu po onboardingu. Przy każdym starcie sam sprawdzaj dostęp do zapisanych danych.
 
-## Aktualizacje
-Aktualizuj tylko kopię narzędzia, zachowując poprzedni stan. Nie nadpisuj profilów ani ich kopii. Migrację schematu wykonuj osobno po zatwierdzeniu oczyszczonego podsumowania. Zaktualizuj własną instrukcję startową w ROOT, jeżeli odwołuje się do starego procesu, zachowując instrukcje klienta. Brak dostępu do GitHuba nie blokuje korzystania z kompletnej lokalnej kopii.
+## Aktualizacje i poranny harmonogram
+Wczytaj references/updates.md oraz assets/update-task.json. Po instalacji lub aktualizacji uruchom
+rzeczywisty poranny harmonogram, gdy klient wyraził zgodę w poleceniu startowym; sprawdź istniejące
+zadania i nie twórz duplikatów. Sam zapis pliku nie tworzy zadania. W razie braku narzędzia do
+harmonogramu poinformuj o ograniczeniu, bez blokowania konfiguracji i demonstracji maila.
+
+Harmonogram tylko sprawdza stabilne wydanie i pyta o aktualizację. Nie instaluje jej bez nowej
+akceptacji konkretnej wersji. Aktualizuj tylko pliki narzędzia, z kopią poprzednich bajtów i kontrolą
+odczytu. Nigdy nie modyfikuj profili ani instrukcji klienta poza katalogiem narzędzia. Ręczne zmiany
+w masterze wymagają ostrzeżenia przed nadpisaniem. Migracja profili jest oddzielnym procesem,
+nie częścią aktualizacji. Nie pokazuj klientowi raportów technicznych ani ścieżek.

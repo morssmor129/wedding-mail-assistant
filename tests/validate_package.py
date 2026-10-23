@@ -29,7 +29,7 @@ class PackageChecks(unittest.TestCase):
     def test_entrypoints(self):
         for name in ('START.md','SKILL.md','AGENTS.md','INSTRUKCJA-KLIENTA.md','VERSION'):
             self.assertTrue((ROOT / name).is_file(), name)
-        self.assertEqual(text('VERSION').strip(), '1.3.0')
+        self.assertEqual(text('VERSION').strip(), '1.4.0')
 
     def test_one_skill(self):
         self.assertEqual([p.relative_to(ROOT).as_posix() for p in ROOT.rglob('SKILL.md')], ['SKILL.md'])
@@ -95,7 +95,7 @@ class PackageChecks(unittest.TestCase):
     def test_templates(self):
         for path in (ROOT/'assets').glob('*.template.txt'):
             value = path.read_text(encoding='utf-8')
-            for required in ('approval: TEMPLATE','revision: 0','schema_version: 2','tool_version: 1.3.0'):
+            for required in ('approval: TEMPLATE','revision: 0','schema_version: 2','tool_version: 1.4.0'):
                 self.assertIn(required, value)
             for forbidden in ('VAT','brutto','netto','kilometr','180','250','70-130','Markdown','Cena podstawowa:','Orientacyjny cennik:','Dojazd / nocleg','Domy\u015blne planowane za\u0142\u0105czniki:'):
                 self.assertNotIn(forbidden, value)

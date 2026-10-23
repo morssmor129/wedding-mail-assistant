@@ -4,7 +4,7 @@ Uruchom aplikację-agenta, w której Jester Ads pomogło przygotować dostęp do
 
 Wklej polecenie:
 
-Uruchom Wedding Mail Assistant by Jester Ads z repozytorium https://github.com/morssmor129/wedding-mail-assistant w udostępnionej przeze mnie przestrzeni pracy. Przeczytaj START.md i wykonaj instrukcje. Sprawdź dostęp do zapisu, zachowaj istniejące ustawienia i poprowadź konfigurację firmy. Po zatwierdzeniu sam zapisz dane, sprawdź ich odczyt i pokaż przykładowy mail. Nie publikuj moich danych. Nie pokazuj technicznych raportów; jeżeli coś nie działa, wyjaśnij to prostym językiem.
+Uruchom Wedding Mail Assistant by Jester Ads z repozytorium https://github.com/morssmor129/wedding-mail-assistant w udostępnionej przeze mnie przestrzeni pracy. Przeczytaj START.md i wykonaj instrukcje. Sprawdź dostęp do zapisu, zachowaj istniejące ustawienia i poprowadź konfigurację firmy. Po zatwierdzeniu sam zapisz dane, sprawdź ich odczyt i pokaż przykładowy mail. Włącz codzienne poranne sprawdzanie aktualizacji i pytaj mnie o zgodę przed każdą instalacją nowej wersji. Nie zmieniaj moich danych firmy ani stylu przy aktualizacji narzędzia. Nie publikuj moich danych. Nie pokazuj technicznych raportów; jeżeli coś nie działa, wyjaśnij to prostym językiem.
 
 Repozytorium musi być dostępne dla odbiorcy. Przy odmowie dostępu skontaktuj się z Jester Ads. Nie przekazuj haseł ani tokenów w rozmowie.
 
@@ -21,7 +21,19 @@ Follow-up: wpisz "Piszemy follow-up" i podaj poprzedni mail oraz sytuację. Wiad
 ## Zmiana stylu
 Napisz np. "Od teraz zawsze zaczynaj od Cześć. Zapisz to jako stałą preferencję". Asystent sam aktualizuje ustawienia i sprawdza zapis. "W tym mailu napisz bardziej elegancko" dotyczy tylko jednej wiadomości.
 
-## Aktualizacja i pomoc
-Aby pobrać nowe instrukcje, napisz: "Zaktualizuj Wedding Mail Assistant z repozytorium źródłowego, zachowując moje dane i styl". Gdy potrzebne jest uporządkowanie starszej konfiguracji, zatwierdź nowe podsumowanie; nie odpowiadasz ponownie na znane pytania.
+## Aktualizacje
+Po uruchomieniu porannego sprawdzania asystent sam sprawdza, czy jest nowsza stabilna wersja.
+Gdy jest dostępna, pyta: "Jest dostępna nowsza wersja narzędzia. Czy aktualizować?".
+Odpowiedz "tak", aby ją zainstalować, albo "nie teraz", aby pozostać przy obecnej.
+Samo powiadomienie nie zmienia narzędzia. Nie dostajesz codziennie tego samego pytania.
+Dane firmy oraz styl pozostają bez zmian. Jeżeli ręcznie zmienisz wzorzec lub instrukcje,
+asystent ostrzeże, że zostaną zastąpione, i zachowa ich kopię przed aktualizacją.
 
-Gdy nowa rozmowa nie rozpoznaje narzędzia, napisz: "Odczytaj instrukcję startową Wedding Mail Assistant w mojej przestrzeni pracy". Przy problemie z dostępem asystent powinien wyjaśnić, co trzeba poprawić, a nie udawać zapisu. Lokalna konfiguracja nie oznacza działania AI offline.
+Poranny przebieg lokalny wymaga włączonego komputera i aplikacji. Jeżeli nie można uruchomić
+harmonogramu, asystent powie o tym. Nadal możesz pisać maile i użyć polecenia "Sprawdź aktualizacje".
+Nie musisz aktualizować narzędzia, aby zachować dostęp do swoich ustawień.
+
+## Pomoc
+Gdy nowa rozmowa nie rozpoznaje narzędzia, napisz: "Odczytaj instrukcję startową Wedding Mail Assistant w mojej przestrzeni pracy".
+Przy problemie z dostępem asystent powinien wyjaśnić, co trzeba poprawić, a nie udawać zapisu.
+Lokalna konfiguracja nie oznacza działania AI offline.

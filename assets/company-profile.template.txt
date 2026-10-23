@@ -1,7 +1,7 @@
 WMA COMPANY PROFILE - WZÓR, NIE JEST PROFILEM KLIENTA
 profile_type: company
 schema_version: 2
-tool_version: 1.3.0
+tool_version: 1.4.0
 company_key: [identyfikator-firmy]
 revision: 0
 approval: TEMPLATE

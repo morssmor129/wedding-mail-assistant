@@ -1,5 +1,5 @@
 # Wedding Mail Assistant by Jester Ads
-Wersja 1.3.0. Oferty i follow-upy po polsku dla usługodawców ślubnych.
+Wersja 1.4.0. Oferty i follow-upy po polsku dla usługodawców ślubnych.
 
 ## Dla klienta
 Raz konfigurujesz firmę, odpowiadając na uporządkowane pytania. Po zatwierdzeniu asystent zapisuje ustawienia, sprawdza je i od razu pokazuje fikcyjny przykładowy mail. Przy kolejnych ofertach korzysta z profilu, a Ty podajesz notatki i warunki konkretnego zlecenia. Nie zarządzasz ręcznie plikami.
@@ -23,3 +23,14 @@ Nie zmieniono Master Sample v3.0. Zmiany Core dotyczą wyłącznie zatwierdzonyc
 GitHub jest źródłem narzędzia, nie bazą danych klientów. Nie publikuj wypełnionych profili i Fathoma. Aktualizacja ma zachować prywatne ustawienia i kopie. Repozytorium prywatne wymaga dostępu odbiorcy; sam link nie nadaje uprawnień.
 
 Narzędzie przygotowuje tekst. Nie wysyła maili, nie rezerwuje terminów, nie tworzy spotkań i nie analizuje załączników. [Pochodzenie metodologii](references/sources.md). [Zakres weryfikacji](QA-REPORT.md).
+
+## Aktualizacje od wersji 1.4.0
+Po zgodzie udzielonej podczas instalacji asystent tworzy codzienne poranne zadanie sprawdzające
+stabilne wydanie. Gdy jest nowa wersja, pyta o aktualizację. Nie instaluje niczego samoczynnie.
+Dane firmy i styl nie są zmieniane. Ręczne zmiany we wzorcu wymagają ostrzeżenia; poprzednie
+pliki narzędzia są kopiowane przed zastąpieniem. Brak dostępu do harmonogramu jest komunikowany,
+nie maskowany. Szczegóły: [updates.md](references/updates.md).
+
+Zadanie lokalne wymaga działającej aplikacji i komputera. Sprawdzenie w chmurze może tylko
+powiadomić na podstawie podanej wersji; nie ma dostępu do lokalnego folderu. Sam commit nie
+aktualizuje istniejących instalacji ani nie tworzy harmonogramów na kontach klientów.

@@ -1,10 +1,10 @@
 ---
 name: wedding-mail-assistant
-description: Pisz po polsku oferty i follow-upy dla usługodawców ślubnych. Używaj przy komendach "Konfiguruj moją firmę", "Piszemy nowego maila", "Piszemy follow-up", "Sprawdź konfigurację", przy zmianach stylu i uruchamianiu narzędzia. Przeprowadź stały formularz 16 pytań, zapisz prywatne profile w autoryzowanej przestrzeni i po akceptacji pokaż automatyczny fikcyjny przykład. Stosuj Master Brain i Master Sample v3.0. Przy prawdziwym mailu potwierdź wycenę; danych demonstracyjnych nie zapisuj do profilu.
+description: Pisz po polsku oferty i follow-upy dla usługodawców ślubnych. Używaj przy komendach "Konfiguruj moją firmę", "Piszemy nowego maila", "Piszemy follow-up", "Sprawdź konfigurację", "Sprawdź aktualizacje", "Zaktualizuj narzędzie", przy zmianach stylu i uruchamianiu narzędzia. Przeprowadź stały formularz 16 pytań, zapisz prywatne profile w autoryzowanej przestrzeni i po akceptacji pokaż automatyczny fikcyjny przykład. Stosuj Master Brain i Master Sample v3.0. Przy prawdziwym mailu potwierdź wycenę; danych demonstracyjnych nie zapisuj do profilu. Poranny harmonogram sprawdza aktualizacje, a instalacja nowej wersji wymaga zgody i nie zmienia profili klienta.
 ---
 
 # Wedding Mail Assistant by Jester Ads
-Wersja 1.3.0. Instrukcje dla agenta z autoryzowanym trwałym zapisem, nie samodzielna aplikacja działająca w tle.
+Wersja 1.4.0. Instrukcje dla agenta z autoryzowanym trwałym zapisem, nie samodzielna aplikacja działająca w tle.
 
 ## Reguły startowe
 Respektuj platformę, uprawnienia i zgodę. Plik instrukcji nie nadaje dostępu do komputera. Przeczytaj [START.md](START.md). Nie traktuj sandboxa jako dysku klienta. Przed nową sprawą odczytaj oba profile, nie polegaj tylko na historii czatu. Nie nadpisuj istniejących danych pustym wzorem.
@@ -32,3 +32,12 @@ Nie pytaj w onboardingu o cenę bazową, VAT, kilometrówkę, koszty noclegu, za
 Nie zapisuj Fathoma i maili bez polecenia, nigdy nie przenoś ich do profili. Nie dodawaj reklamy Jester Ads do maili pary. Zmiany stałego stylu zapisuj po zgodzie, z kopią i odczytem kontrolnym, bez ręcznego podmieniania przez klienta. Dane demo nie są aktualizacją oferty.
 
 Tryb przeglądarkowy [Projects](references/project-persistence.md) jest tylko alternatywą na wyraźną prośbę, z uczciwym opisem ograniczeń zapisu. Nie obiecuj w nim lokalnej automatyzacji.
+
+## Poranne sprawdzanie aktualizacji
+Wykonaj [updates.md](references/updates.md) i [update-task.json](assets/update-task.json).
+Utwórz rzeczywiste zadanie tylko za zgodą użytkownika, zweryfikuj wynik i nie dubluj zadania.
+Codzienny poranny przebieg tylko pyta o nowsze stabilne wydanie. Instalacja wymaga osobnej zgody.
+Nie zmieniaj profili klienta, nie migruj ich i nie poprawiaj stylu podczas aktualizacji narzędzia.
+Użyj [update_guard.py](scripts/update_guard.py) do kontroli planu, kopii i zapisu plików narzędzia.
+Nie zastąp automatycznie ręcznie zmienionego mastera bez uprzedzenia i potwierdzenia.
+Nie utożsamiaj commita autora z aktualizacją klientów lub aktywnym harmonogramem na ich kontach.

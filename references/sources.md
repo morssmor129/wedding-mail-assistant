@@ -13,3 +13,14 @@ Repozytorium prywatne wymaga dostępu. Nie zmieniaj jego widoczności bez wyraź
 ## marketingskills
 https://github.com/coreyhaines31/marketingskills
 Autor: Corey Haines. Wskazane źródło inspiracji dotyczące copywritingu, korzyści i redakcji. Pakiet nie zawiera kopii pełnych modułów upstream i nie pobiera ich podczas pisania maila. Nie opisuj ich jako zainstalowanej zależności. Zasady branżowe, workflow i sample wynikają z uzgodnień Jester Ads.
+
+## Update scheduling, verified 2026-10-23
+https://developers.openai.com/codex/app/automations
+Redirects to https://learn.chatgpt.com/docs/automations?surface=app .
+The official guide says skills can create/update real scheduled tasks. Desktop local tasks need
+an available local workspace, computer on and app running; permissions still apply.
+https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt
+Availability and task limits depend on the account/app. Web tasks are not proof of local-folder
+access. Do not rely on project uploads in cloud tasks; use a self-contained repository watch prompt.
+The morning policy, stable-release manifest, backup and confirmation rules are WMA design decisions,
+not a promise of a built-in auto-update service provided by OpenAI.

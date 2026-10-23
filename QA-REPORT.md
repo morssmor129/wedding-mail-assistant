@@ -1,15 +1,22 @@
-# Kontrola wersji 1.3.0
-Data przygotowania: 2026-10-22.
+# QA report - Wedding Mail Assistant 1.4.0
 
-## Wykonano
-- Potwierdzono zgodność 26 plików wejściowych z blobami commita 8c1fd832a0a62cb8d76a751798f172bc4b8ae122 przed edycją.
-- Uruchomiono 25 testów regresji (unittest): struktura, wersja, UTF-8, odnośniki, zamrożony formularz, stałe opcje, wykluczone pola, oddzielenie profili, podpis, reguły migracji i izolacja demo.
-- Uruchomiono renderer w osobnym procesie i porównano dokładne pytania z plikiem kanonicznym.
-- Sprawdzono rachunek demo: 6500 + 500 + 600 + 300 = 7900; nieznany koszt noclegu nie jest wliczony.
-- Zweryfikowano przykładową wiadomość (fikcyjna fixture) oraz przypadki błędnej sumy, CTA, noclegu i niedozwolonego formatowania.
-- Zachowano Master Sample v3.0 bajt w bajt. Hash Master Brain zmieniono jawnie po zatwierdzonych poprawkach granic produktu; nie udawano, że Core jest identyczny z 1.2.
+Verification performed 2026-10-23 in an isolated build container.
 
-## Zakres i ograniczenia
-To testy artefaktów, deterministycznych helperów i jednego przykładu, nie pełny test zachowania agenta. Nie wykonano instalacji na komputerze klienta, testu zapisu jego profili ani testu nowej sesji aplikacji desktopowej. Automatyczny pokaz w instrukcjach ma sprawdzać zapis i generację w sesji po konfiguracji, nie udawać testu między sesjami.
+- Baseline unpacked from the supplied v1.3.0 ZIP; the full Git tree was identical to
+  repository tree b72401eddf958624546231ef7326f4c7806245a6 (commit 3330457).
+- 25 existing package and business-workflow checks passed.
+- 17 new updater checks passed: consent binding, local edits/backup, rollback after a
+  handled write error, stable version ordering, tampering, private/unsafe paths,
+  symlinks, concurrency lock, preserved unknown files and protected client data.
+- Master Brain, Master Sample v3.0, the 16 questions and the demo fixture remain
+  byte-for-byte equal to their approved hashes.
+- Stable release manifest validates hashes of all managed publisher files.
+- Skill structure validation and ZIP integrity checked before delivery.
 
-Scenariusze integracyjne są w tests/behavior-scenarios.md. Nie przekazuj ich jako zadania klientowi po akceptacji onboardingu. Wydanie nie aktualizuje samoczynnie wcześniej pobranych kopii narzędzia.
+## Limits of verification
+No real customer desktop was accessed. No customer profiles were read, migrated or written.
+These are deterministic file/helper tests, not an end-to-end model test or proof that a
+customer's native scheduler was activated. Activation must use the scheduler API and read
+its actual returned status in that customer's environment. A cloud watch cannot inspect a
+local installation. Handled failures roll back; abrupt power/process loss can need recovery.
+Hash manifests verify file consistency, not publisher signatures. No remote hooks execute.

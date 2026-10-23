@@ -2,7 +2,7 @@
 
 W desktopie utrzymuj dwa prywatne pliki: profil/company-profile.md i profil/user-style.md. W wyraźnie wybranym trybie Projects analogiczne źródła TXT. Nie umieszczaj w nich instrukcji Master Brain. Szablony: [firma](../assets/company-profile.template.txt), [styl](../assets/user-style.template.txt).
 
-Nagłówek techniczny: profile_type, schema_version: 2, tool_version: 1.3.0, wspólny company_key, revision (od 1), approval: approved dopiero po zgodzie, rzeczywista znana data updated_at oraz change_note. Wyznacz company_key z nazwy, bez osobnego pytania do klienta. Nazwy plików, wersje i pola nagłówka nie należą do zwykłego podsumowania.
+Nagłówek techniczny: profile_type, schema_version: 2, tool_version: 1.4.0, wspólny company_key, revision (od 1), approval: approved dopiero po zgodzie, rzeczywista znana data updated_at oraz change_note. Wyznacz company_key z nazwy, bez osobnego pytania do klienta. Nazwy plików, wersje i pola nagłówka nie należą do zwykłego podsumowania.
 
 ## Firma
 Zapisuj wyłącznie fakty z Q01-Q10 i imię oraz nazwisko z Q15. Ceny wolno utrwalać tylko w katalogach atrakcji, muzyków i partnerów (Q06-Q08), jako stałe lub ustalane indywidualnie. Katalog nie zastępuje potwierdzenia kwot dla konkretnej pary ani nie potwierdza dostępności współpracownika. Oferta podstawowa opisuje zakres, nie cennik.

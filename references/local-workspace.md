@@ -9,7 +9,7 @@ Odczytaj oba aktywne profile przed nową sprawą. Sprawdź profile_type, schema_
 
 ## Zapis po akceptacji
 1. Uzyskaj zatwierdzenie podsumowania. Jednoznaczna akceptacja jest zgodą na zapis, nie proś o ponowne kliknięcie ani komendę.
-2. Przygotuj kompletne profile schematu 2 według wzorów; pierwszy revision to 1, tool_version to 1.3.0. Zachowaj dane już zatwierdzone. Nie twórz nowej firmy na podstawie demo.
+2. Przygotuj kompletne profile schematu 2 według wzorów; pierwszy revision to 1, tool_version to 1.4.0. Zachowaj dane już zatwierdzone. Nie twórz nowej firmy na podstawie demo.
 3. Jeżeli pliki istnieją, przejdź do aktualizacji. Nigdy nie zastępuj pełnego profilu pustym wzorem.
 4. Zapisz UTF-8 w ROOT/profil, najlepiej do unikalnych plików tymczasowych. Odczytaj je, porównaj z zatwierdzoną treścią, następnie bezpiecznie zastąp docelowe pliki. Ponownie odczytaj oba pliki docelowe. Kontroluj treść, wspólny klucz, zatwierdzenie i rewizję.
 5. Przy częściowym błędzie nie ogłaszaj gotowości. Nie ukrywaj błędu za pokazem maila. Powiedz np. "Nie udało się zapisać wszystkich ustawień. Sprawdź dostęp do zapisu".
