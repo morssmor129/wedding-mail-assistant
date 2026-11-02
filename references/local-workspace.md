@@ -5,11 +5,11 @@ ROOT oznacza wyłącznie prywatny folder wskazany przez klienta i dostępny do o
 Kopia narzędzia: zwykle ROOT/narzedzie. Dane prywatne: ROOT/profil/company-profile.md, ROOT/profil/user-style.md, ROOT/profil/profile-history.md oraz ROOT/profil/backups/. Nigdy nie publikuj tych danych. .gitignore nie jest szyfrowaniem.
 
 ## Odczyt
-Odczytaj oba aktywne profile przed nową sprawą. Sprawdź profile_type, schema_version: 2, wspólny company_key, dodatni revision i approval: approved. TEMPLATE nie jest profilem. Starszy schemat migruj według company-profile.md bez ponownego całego onboardingu. Nie wybieraj kopii z backups jako aktywnej i nie łącz profili dwóch firm. Brak dostępu nie oznacza braku danych ani zgody na ich wyzerowanie.
+Odczytaj oba aktywne profile przed nową sprawą. Sprawdź profile_type, schema_version: 3, wspólny company_key, dodatni revision i approval: approved. TEMPLATE nie jest profilem. Starszy schemat migruj według company-profile.md bez ponownego całego onboardingu. Nie wybieraj kopii z backups jako aktywnej i nie łącz profili dwóch firm. Brak dostępu nie oznacza braku danych ani zgody na ich wyzerowanie.
 
 ## Zapis po akceptacji
 1. Uzyskaj zatwierdzenie podsumowania. Jednoznaczna akceptacja jest zgodą na zapis, nie proś o ponowne kliknięcie ani komendę.
-2. Przygotuj kompletne profile schematu 2 według wzorów; pierwszy revision to 1, tool_version to 1.4.0. Zachowaj dane już zatwierdzone. Nie twórz nowej firmy na podstawie demo.
+2. Przygotuj kompletne profile schematu 3 według wzorów; pierwszy revision to 1, tool_version to 1.5.0. Zachowaj dane już zatwierdzone. Nie twórz nowej firmy na podstawie demo.
 3. Jeżeli pliki istnieją, przejdź do aktualizacji. Nigdy nie zastępuj pełnego profilu pustym wzorem.
 4. Zapisz UTF-8 w ROOT/profil, najlepiej do unikalnych plików tymczasowych. Odczytaj je, porównaj z zatwierdzoną treścią, następnie bezpiecznie zastąp docelowe pliki. Ponownie odczytaj oba pliki docelowe. Kontroluj treść, wspólny klucz, zatwierdzenie i rewizję.
 5. Przy częściowym błędzie nie ogłaszaj gotowości. Nie ukrywaj błędu za pokazem maila. Powiedz np. "Nie udało się zapisać wszystkich ustawień. Sprawdź dostęp do zapisu".

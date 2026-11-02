@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "scenarios": {
+    "dj": {
+      "label": "DJ / konferansjer",
+      "module": "dj",
+      "is_demo": true,
+      "approved_for_demo": true,
+      "never_persist_to_company_or_style": true,
+      "notes": "Para planuje wesele dla około 100 osób. Zależy im na swobodnej atmosferze, dobrym miksie pokoleń i prowadzeniu bez krępujących zabaw.",
+      "service_lines": [
+        {"name": "Pakiet DJ i konferansjer", "price": 6500},
+        {"name": "Ciężki dym", "price": 600},
+        {"name": "Fontanny iskier", "price": 300}
+      ],
+      "travel": {"price": 500},
+      "lodging": {"provided_by": "client", "nights": 2, "price": null, "included_in_total": false},
+      "attachments": [],
+      "total_payable": 7900,
+      "cta": "rozmowa jutro o 18:00, aby potwierdzić decyzję"
+    },
+    "photography": {
+      "label": "Fotografia ślubna",
+      "module": "photography",
+      "is_demo": true,
+      "approved_for_demo": true,
+      "never_persist_to_company_or_style": true,
+      "notes": "Para organizuje kameralne wesele dla około 70 osób. Zależy im na naturalnych kadrach, emocjach i jak najmniejszej liczbie długich pozowanych ujęć.",
+      "service_lines": [
+        {"name": "Reportaż ślubny", "price": 5200},
+        {"name": "Sesja narzeczeńska", "price": 700}
+      ],
+      "travel": {"price": 300},
+      "lodging": {"provided_by": "none", "nights": 0, "price": null, "included_in_total": false},
+      "attachments": [],
+      "total_payable": 6200,
+      "cta": "rozmowa jutro o 18:00, aby potwierdzić decyzję"
+    },
+    "video": {
+      "label": "Film ślubny",
+      "module": "video",
+      "is_demo": true,
+      "approved_for_demo": true,
+      "never_persist_to_company_or_style": true,
+      "notes": "Parze zależy na dynamicznym filmie, krótszym teledysku i naturalnym reportażu bez ustawiania każdego momentu wesela.",
+      "service_lines": [
+        {"name": "Film ślubny", "price": 6000},
+        {"name": "Krótki teaser do social media", "price": 600}
+      ],
+      "travel": {"price": 400},
+      "lodging": {"provided_by": "none", "nights": 0, "price": null, "included_in_total": false},
+      "attachments": [],
+      "total_payable": 7000,
+      "cta": "rozmowa jutro o 18:00, aby potwierdzić decyzję"
+    },
+    "music": {
+      "label": "Muzyk / zespół",
+      "module": "music",
+      "is_demo": true,
+      "approved_for_demo": true,
+      "never_persist_to_company_or_style": true,
+      "notes": "Para szuka oprawy muzycznej, która ma być elegancka podczas ceremonii i bardziej energetyczna podczas wieczornego występu.",
+      "service_lines": [
+        {"name": "Występ muzyczny", "price": 4500},
+        {"name": "Oprawa ceremonii", "price": 800}
+      ],
+      "travel": {"price": 300},
+      "lodging": {"provided_by": "none", "nights": 0, "price": null, "included_in_total": false},
+      "attachments": [],
+      "total_payable": 5600,
+      "cta": "rozmowa jutro o 18:00, aby potwierdzić decyzję"
+    },
+    "combined": {
+      "label": "Oferta łączona",
+      "module": "combined",
+      "is_demo": true,
+      "approved_for_demo": true,
+      "never_persist_to_company_or_style": true,
+      "notes": "Para chce jednego zespołu odpowiedzialnego za muzykę, prowadzenie, zdjęcia i film. Najważniejsza jest spójna organizacja i mniej osób do koordynowania po stronie Pary.",
+      "service_lines": [
+        {"name": "DJ i prowadzenie", "price": 6500},
+        {"name": "Reportaż fotograficzny", "price": 5200},
+        {"name": "Film ślubny", "price": 6000},
+        {"name": "Ciężki dym", "price": 600}
+      ],
+      "travel": {"price": 500},
+      "lodging": {"provided_by": "client", "nights": 2, "price": null, "included_in_total": false},
+      "attachments": [],
+      "total_payable": 18800,
+      "cta": "rozmowa jutro o 18:00, aby potwierdzić decyzję"
+    },
+    "universal": {
+      "label": "Inna usługa ślubna",
+      "module": "universal",
+      "is_demo": true,
+      "approved_for_demo": true,
+      "never_persist_to_company_or_style": true,
+      "notes": "Para szuka usługodawcy, który przejmie jasno określony zakres realizacji i zadba o sprawną komunikację przed wydarzeniem.",
+      "service_lines": [
+        {"name": "Usługa podstawowa", "price": 4000},
+        {"name": "Rozszerzenie usługi", "price": 500}
+      ],
+      "travel": {"price": 300},
+      "lodging": {"provided_by": "none", "nights": 0, "price": null, "included_in_total": false},
+      "attachments": [],
+      "total_payable": 4800,
+      "cta": "rozmowa jutro o 18:00, aby potwierdzić decyzję"
+    }
+  }
+}

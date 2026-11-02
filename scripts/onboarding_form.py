@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the canonical onboarding without paraphrasing or inventing controls."""
+"""Render the stable common onboarding and selected service modules."""
 from __future__ import annotations
 import argparse
 import json
@@ -8,27 +8,32 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def load_form(path: Path | None = None) -> dict:
-    path = path or ROOT / 'assets/onboarding-questions.json'
-    form = json.loads(path.read_text(encoding='utf-8'))
-    if [q['id'] for q in form['questions']] != [f'Q{i:02d}' for i in range(1, 17)]:
-        raise ValueError('Expected the ordered canonical questions Q01-Q16')
-    sections = {s['id'] for s in form['sections']}
-    if sections != {'A', 'B', 'C', 'D'}:
-        raise ValueError('Expected four canonical sections')
-    for question in form['questions']:
-        if question['section'] not in sections or not question.get('text'):
-            raise ValueError('Invalid question')
-        if question['type'] == 'single_choice' and not question.get('options'):
-            raise ValueError('Choice question requires options')
+def load_core() -> dict:
+    form = json.loads((ROOT / 'assets/onboarding-questions.json').read_text(encoding='utf-8'))
+    ids = [q['id'] for q in form['questions']]
+    if ids != ['Q01','Q02','Q03','Q09','Q10','Q11','Q12','Q13','Q14','Q15','Q16']:
+        raise ValueError('Unexpected common question IDs')
     return form
 
 
-def render(section: str = 'all', form: dict | None = None) -> str:
-    form = form or load_form()
-    if section not in ('all', 'A', 'B', 'C', 'D'):
+def load_modules() -> dict:
+    data = json.loads((ROOT / 'assets/service-modules.json').read_text(encoding='utf-8'))
+    expected = {'dj','photography','video','music','universal'}
+    if set(data['modules']) != expected:
+        raise ValueError('Unexpected service modules')
+    for key, module in data['modules'].items():
+        fields = [q['field'] for q in module['questions']]
+        if fields != ['scope','delivery_team','extras','related_services']:
+            raise ValueError(f'Invalid logical fields in {key}')
+    return data
+
+
+def render_core(section: str = 'all') -> str:
+    form = load_core()
+    allowed = {'all'} | {s['id'] for s in form['sections']}
+    if section not in allowed:
         raise ValueError('Unknown section')
-    lines: list[str] = []
+    lines=[]
     for group in form['sections']:
         if section != 'all' and group['id'] != section:
             continue
@@ -36,22 +41,30 @@ def render(section: str = 'all', form: dict | None = None) -> str:
         for q in form['questions']:
             if q['section'] != group['id']:
                 continue
-            lines.extend(('', f"{int(q['id'][1:])}. {q['text']}"))
-            for option in q.get('options', []):
-                lines.append(f"{option['id']}. {option['label']}")
+            lines += ['', f"{q['id']}. {q['text']}"]
+            for o in q.get('options',[]):
+                lines.append(f"{o['id']}. {o['label']}")
         lines.append('')
-    return '\n'.join(lines).strip() + '\n'
+    return '\n'.join(lines).strip()+'\n'
+
+
+def render_module(name: str) -> str:
+    data=load_modules(); module=data['modules'][name]
+    lines=[module['label']]
+    for q in module['questions']:
+        lines += ['', f"{q['id']}. {q['text']}"]
+    return '\n'.join(lines).strip()+'\n'
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--section', choices=['all', 'A', 'B', 'C', 'D'], default='all')
-    args = parser.parse_args()
+    p=argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--section', default='all', choices=['all','A','C','D'])
+    p.add_argument('--module', choices=['dj','photography','video','music','universal'])
+    args=p.parse_args()
     try:
-        print(render(args.section), end='')
-    except (OSError, ValueError, KeyError, TypeError) as error:
-        print(f'Cannot render onboarding: {error}', file=sys.stderr)
-        return 1
+        print(render_module(args.module) if args.module else render_core(args.section), end='')
+    except (OSError, ValueError, KeyError, TypeError) as e:
+        print(f'Cannot render onboarding: {e}', file=sys.stderr); return 1
     return 0
 
 

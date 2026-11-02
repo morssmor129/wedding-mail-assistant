@@ -1,36 +1,26 @@
 # Wedding Mail Assistant by Jester Ads
-Wersja 1.4.0. Oferty i follow-upy po polsku dla usługodawców ślubnych.
+Wersja 1.5.0. Oferty i follow-upy po polsku dla usługodawców ślubnych.
 
-## Dla klienta
-Raz konfigurujesz firmę, odpowiadając na uporządkowane pytania. Po zatwierdzeniu asystent zapisuje ustawienia, sprawdza je i od razu pokazuje fikcyjny przykładowy mail. Przy kolejnych ofertach korzysta z profilu, a Ty podajesz notatki i warunki konkretnego zlecenia. Nie zarządzasz ręcznie plikami.
+## Co robi
+Jednorazowo poznaje firmę i zapisuje jej profil oraz styl. Obsługuje DJ-ów, fotografów, filmowców, muzyków, zespoły i firmy wielousługowe. Po odpowiedzi na pierwsze pytanie rozpoznaje zakres działalności, prosi o potwierdzenie i uruchamia wyłącznie właściwe moduły pytań.
 
-[Instrukcja klienta](INSTRUKCJA-KLIENTA.md). [Uruchomienie dla asystenta](START.md).
+Firma może mieć kilka usług jednocześnie. Narzędzie nie sprowadza pakietu foto-video albo firmy DJ + foto + video do jednej błędnej kategorii.
 
-Wymagana jest aplikacja-agenta z dostępem do odczytu i zapisu w wydzielonej przestrzeni użytkownika, np. odpowiednio skonfigurowany lokalny Work. Sam płatny plan lub zwykły czat nie daje takich uprawnień. Zachowaj wymagane zgody. Nie obiecujemy działania offline ani bez limitów.
+## Materiały firmy
+Podczas konfiguracji użytkownik może opcjonalnie przesłać PDF, DOCX, wkleić wcześniejszy mail albo podać publiczną stronę WWW. Narzędzie wykorzystuje tylko potwierdzalne informacje, pokazuje konflikty i pyta o braki. Nie analizuje automatycznie Instagrama/Facebooka jako źródła oferty.
 
-## Zmiany 1.3
-- Jeden formularz: 16 pytań, cztery stałe sekcje i niezmienne opcje. Bez pytania o cenę podstawową, VAT, kilometrówkę lub koszty noclegu.
-- Osobne katalogi atrakcji, dodatkowych występów i partnerów. Tylko tam zapisujemy ceny standardowe. Realna wycena jest potwierdzana przed mailem.
-- Stały podpis: zwrot, imię i nazwisko, firma, wskazany link.
-- Master Brain nie jest menu ustawień klienta. Podsumowanie nie pokazuje limitów długości ani parametrów metodologii.
-- Zapis i odczyt sprawdzane wewnętrznie, a zamiast komunikatów technicznych automatyczny przykład. Scenariusz demo: 6500 + 500 + 600 + 300 = 7900 zł oraz nocleg na dwie doby po stronie klienta. Dane demo nie trafiają do profili.
+PDF planowany jako załącznik do konkretnego maila to inny przypadek: samo jego dołączenie nie uruchamia analizy.
+
+## Codzienna praca
+Przed prawdziwą ofertą użytkownik potwierdza cenę, aktywny zakres usług, dodatki, dojazd/nocleg i załączniki. W firmie wielousługowej mail dotyczy tylko usług wybranych przez konkretną Parę, chyba że użytkownik potwierdzi pakiet łączony.
+
+Master Brain, długość maila, język korzyści, CTA i formatowanie są zasadami produktu, nie ustawieniami do negocjowania w onboardingu.
 
 ## Dla autora
-Pytania: [assets/onboarding-questions.json](assets/onboarding-questions.json). Scenariusz: [assets/demo-offer.json](assets/demo-offer.json). Zapis: [references/local-workspace.md](references/local-workspace.md). Testy: [tests/validate_package.py](tests/validate_package.py). Historia: [CHANGELOG.md](CHANGELOG.md).
+- rdzeń pytań: [assets/onboarding-questions.json](assets/onboarding-questions.json)
+- moduły branżowe: [assets/service-modules.json](assets/service-modules.json)
+- analiza materiałów: [references/source-analysis.md](references/source-analysis.md)
+- scenariusze demo: [assets/demo-scenarios.json](assets/demo-scenarios.json)
+- testy: [tests/validate_package.py](tests/validate_package.py)
 
-Nie zmieniono Master Sample v3.0. Zmiany Core dotyczą wyłącznie zatwierdzonych granic konfiguracji i stałego podpisu. Pliki są otwarte, a instrukcje nie stanowią ochrony kryptograficznej. Zmiana repozytorium nie aktualizuje automatycznie już pobranej kopii klienta.
-
-GitHub jest źródłem narzędzia, nie bazą danych klientów. Nie publikuj wypełnionych profili i Fathoma. Aktualizacja ma zachować prywatne ustawienia i kopie. Repozytorium prywatne wymaga dostępu odbiorcy; sam link nie nadaje uprawnień.
-
-Narzędzie przygotowuje tekst. Nie wysyła maili, nie rezerwuje terminów, nie tworzy spotkań i nie analizuje załączników. [Pochodzenie metodologii](references/sources.md). [Zakres weryfikacji](QA-REPORT.md).
-
-## Aktualizacje od wersji 1.4.0
-Po zgodzie udzielonej podczas instalacji asystent tworzy codzienne poranne zadanie sprawdzające
-stabilne wydanie. Gdy jest nowa wersja, pyta o aktualizację. Nie instaluje niczego samoczynnie.
-Dane firmy i styl nie są zmieniane. Ręczne zmiany we wzorcu wymagają ostrzeżenia; poprzednie
-pliki narzędzia są kopiowane przed zastąpieniem. Brak dostępu do harmonogramu jest komunikowany,
-nie maskowany. Szczegóły: [updates.md](references/updates.md).
-
-Zadanie lokalne wymaga działającej aplikacji i komputera. Sprawdzenie w chmurze może tylko
-powiadomić na podstawie podanej wersji; nie ma dostępu do lokalnego folderu. Sam commit nie
-aktualizuje istniejących instalacji ani nie tworzy harmonogramów na kontach klientów.
+GitHub jest źródłem narzędzia, nie bazą danych klientów. Nie publikuj profili, Fathoma ani prywatnych materiałów użytkowników.

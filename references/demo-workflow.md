@@ -1,25 +1,33 @@
 # Automatyczny pokaz po konfiguracji
 
 ## Warunek
-Uruchom po pierwszym zatwierdzeniu, skutecznym zapisie i ponownym odczycie obu profili, a po migracji tylko jeżeli pokaz nie odbył się w tej konfiguracji. Nie uruchamiaj go przy każdym prawdziwym mailu ani przy zwykłej zmianie stylu. Na prośbę "Pokaż przykładowy mail" możesz go powtórzyć.
+Uruchom po pierwszym zatwierdzeniu, skutecznym zapisie i ponownym odczycie profili. Nie uruchamiaj przy każdym prawdziwym mailu ani przy zwykłej zmianie stylu. Na prośbę "Pokaż przykładowy mail" możesz go powtórzyć.
 
-## Stały scenariusz
-Odczytaj [demo-offer.json](../assets/demo-offer.json). To fikcyjne notatki Fathom i zatwierdzona przez autora narzędzia wycena WYŁĄCZNIE DLA DEMO. Nie otwieraj nagrania, nie pytaj klienta o ceny i nie wymagaj dodatkowej akceptacji. Nigdy nie uznawaj tego mechanizmu za zgodę na pomijanie potwierdzeń w prawdziwej ofercie.
+## Wybór scenariusza
+Odczytaj [demo-scenarios.json](../assets/demo-scenarios.json). Wybierz demo według zatwierdzonej mapy usług:
+- wyłącznie lub głównie DJ / prowadzenie -> dj;
+- fotografia -> photography;
+- film / video -> video;
+- muzyk / zespół -> music;
+- firma sprzedaje co najmniej dwie wyraźnie różne główne usługi, np. DJ + foto/video -> combined;
+- inna usługa -> universal.
 
-Przejdź rzeczywisty workflow oferty: odczytaj profile, wyodrębnij potrzeby, sprawdź zakres, oblicz sumę, napisz nowy mail w zatwierdzonym stylu, dodaj podpis i wykonaj quality-check. Nie oddawaj niezmiennego tekstu z fixture jako rzekomo spersonalizowanego wyniku.
+Jeżeli firma ma wiele usług, ale użytkownik wskazał jedną główną specjalizację, możesz użyć jej scenariusza zamiast combined. Nie używaj DJ demo u fotografa ani fotograficznego u muzyka.
 
-Zachowaj kwoty: pakiet DJ i konferansjer 6500 zł, dojazd 500 zł, wybrane dodatki ciężki dym 600 zł i fontanny iskier 300 zł. Razem 7900 zł. Nocleg na dwie doby zapewnia klient; jego nieznanego kosztu nie wyceniaj, nie dodawaj do sumy i nie przedstawiaj jako wliczonego. Dodatki są wybrane, a nie opcjonalne. Brak planowanych załączników w scenariuszu: nie dopisuj PDF-u ani umowy. CTA: rozmowa jutro o 18:00 w celu potwierdzenia decyzji, plus zaproszenie do pytań. To fikcyjne ustalenie w treści, nie zadanie w kalendarzu.
+Scenariusze są fikcyjne i zatwierdzone wyłącznie do demonstracji. Nie pytaj klienta o ich ceny i nie zapisuj ich do profilu.
 
-Wybrany pakiet "DJ i konferansjer" nie potwierdza sam w sobie duetu. Jeżeli aktualny profil DJ-a potwierdza duet, możesz wykorzystać jego korzyść. Nie obiecuj dwóch osób tylko na podstawie nazwy pakietu. Nie deklaruj zablokowania terminu, skoro data wesela nie jest ustalona.
+## Generacja
+Przejdź przez rzeczywisty workflow oferty w trybie is_demo=true: odczytaj styl, wyodrębnij potrzeby, sprawdź zakres, policz sumę, napisz nowy mail, dodaj podpis i wykonaj quality-check. Nie kopiuj gotowego tekstu; demo ma pokazać styl konkretnego użytkownika.
 
-## Inne branże
-Scenariusz DJ jest stały. Nie dopisuj go do oferty fotografa, muzyka ani innej firmy. Dla profilu niezwiązanego z DJ użyj fikcyjnego nadawcy "Marek Nowak", marki "Przykładowa firma DJ" i pomiń nieistniejący link; zachowaj wybrany ton, powitanie i zakończenie. Przed mailem dopisz: "Przykład dotyczy fikcyjnej usługi DJ i konferansjera, nie oferty Twojej firmy". W prawdziwych mailach korzystaj wyłącznie z rzeczywistej branży i oferty.
+Każdy scenariusz zawiera service_lines, travel, lodging, attachments, total_payable i CTA. Dodaj tylko pozycje wpisane w scenariuszu. Nocleg z ceną null nie wchodzi do sumy. Nie wymyślaj liczby osób w zespole, jeżeli scenariusz ani profil jej nie potwierdzają.
 
-## Wynik widoczny dla użytkownika
-Powiedz: "Konfiguracja gotowa. Tak będzie wyglądał przykładowy mail. To fikcyjna oferta pokazująca sposób działania narzędzia".
-Następnie pokaż sam temat i treść maila w osobnym bloku do kopiowania. Nie pokazuj surowych notatek testowych, ścieżek, rewizji, liczników słów ani raportu kontroli. Po mailu możesz dodać jedno zdanie: "Teraz wpisz: Piszemy nowego maila, i wklej notatki ze swojej rozmowy". Nie nazywaj tego obowiązkiem wykonania testu.
+## Wynik
+Powiedz: "Konfiguracja gotowa. Tak będzie wyglądał przykładowy mail. To fikcyjna oferta pokazująca sposób działania narzędzia."
+Następnie pokaż temat i treść maila. Nie pokazuj surowych danych scenariusza, ścieżek, rewizji, liczników słów ani raportu kontroli.
 
-## Izolacja i rzetelność
-Przechowuj demo wyłącznie jako sprawę tymczasową z is_demo=true. Nigdy nie zapisuj jego pary, cen, noclegu, CTA, składu ani dodatków do company-profile lub user-style. Nie aktualizuj katalogu klienta cenami demo nawet przy konflikcie (np. fontanny 250 zł w katalogu). Zatwierdzenie przykładu nie zmienia profilu. Przed kolejną prawdziwą sprawą usuń demonstrację z aktywnych ustaleń i odczytaj realny profil.
+Po mailu możesz dodać jedno zdanie: "Teraz wpisz: Piszemy nowego maila, i wklej notatki ze swojej rozmowy".
 
-Sprawdzenie zapisu i generacji wykonujesz w bieżącej sesji. Nie twierdź, że przetestowano nową sesję lub komputer klienta. Nie wysyłaj maila, nie zapisuj spotkania i nie blokuj terminu. Pomocniczy scripts/check_demo.py sprawdza rachunek i format; nie zastępuje oceny sensu tekstu.
+## Izolacja
+Nigdy nie zapisuj danych demo, cen, CTA, noclegu, dodatków ani fikcyjnej pary do profili. Zatwierdzenie przykładu nie zmienia profilu. Przed prawdziwą sprawą odczytaj realny profil i usuń demonstrację z aktywnych ustaleń.
+
+Sprawdzenie w bieżącej sesji nie jest testem nowego komputera ani nowej sesji. Nie wysyłaj maila, nie twórz spotkania i nie blokuj terminu.

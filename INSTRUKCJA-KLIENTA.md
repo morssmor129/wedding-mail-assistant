@@ -1,39 +1,33 @@
 # Wedding Mail Assistant by Jester Ads
 ## Jak zacząć
-Uruchom aplikację-agenta, w której Jester Ads pomogło przygotować dostęp do prywatnej przestrzeni pracy. Wymagany jest odczyt i zapis; zwykły czat bez tych uprawnień nie zapisze trwale ustawień. Zgody nadajesz samodzielnie, a potem plikami zajmuje się asystent.
+Uruchom aplikację-agenta z dostępem do prywatnego folderu pracy. Zgody nadajesz samodzielnie, a potem plikami zajmuje się asystent.
 
 Wklej polecenie:
 
-Uruchom Wedding Mail Assistant by Jester Ads z repozytorium https://github.com/morssmor129/wedding-mail-assistant w udostępnionej przeze mnie przestrzeni pracy. Przeczytaj START.md i wykonaj instrukcje. Sprawdź dostęp do zapisu, zachowaj istniejące ustawienia i poprowadź konfigurację firmy. Po zatwierdzeniu sam zapisz dane, sprawdź ich odczyt i pokaż przykładowy mail. Włącz codzienne poranne sprawdzanie aktualizacji i pytaj mnie o zgodę przed każdą instalacją nowej wersji. Nie zmieniaj moich danych firmy ani stylu przy aktualizacji narzędzia. Nie publikuj moich danych. Nie pokazuj technicznych raportów; jeżeli coś nie działa, wyjaśnij to prostym językiem.
-
-Repozytorium musi być dostępne dla odbiorcy. Przy odmowie dostępu skontaktuj się z Jester Ads. Nie przekazuj haseł ani tokenów w rozmowie.
+Uruchom Wedding Mail Assistant by Jester Ads z repozytorium https://github.com/morssmor129/wedding-mail-assistant w udostępnionej przeze mnie przestrzeni pracy. Przeczytaj START.md i wykonaj instrukcje. Sprawdź dostęp do zapisu, zachowaj istniejące ustawienia i poprowadź konfigurację firmy. Po zatwierdzeniu sam zapisz dane, sprawdź ich odczyt i pokaż przykładowy mail. Włącz codzienne poranne sprawdzanie aktualizacji i pytaj mnie o zgodę przed każdą instalacją nowej wersji. Nie zmieniaj moich danych firmy ani stylu przy aktualizacji narzędzia. Nie publikuj moich danych.
 
 ## Jednorazowa konfiguracja
-Odpowiedz na pytania w czterech sekcjach: firma, oferta, sposób pisania i podpis. Przy pytaniach wyboru wskaż opcję lub jej literę. Gdy coś Cię nie dotyczy, napisz to. Nie podajesz ceny oferty podstawowej, kilometrówki ani kosztów noclegu. Możesz podać katalog cen atrakcji i dodatkowych usług.
+Najpierw opisz własnymi słowami, czym zajmuje się firma. Asystent rozpozna usługi i poprosi o potwierdzenie, czy dobrze zrozumiał zakres. Jeżeli firma oferuje kilka usług, może zapisać je osobno, np. DJ, fotografia i film.
 
-Sprawdź podsumowanie i zatwierdź je. Asystent zapisze ustawienia, sprawdzi je i pokaże przykładowy mail. To demonstracja na fikcyjnych danych, nie oferta dla prawdziwej pary ani zmiana Twojego cennika. Nie musisz wykonywać osobnego testu lub zapisywać profili ręcznie.
+Następnie możesz opcjonalnie przesłać PDF lub Word z ofertą, wkleić wcześniejszy mail albo podać adres swojej strony WWW. Asystent wyciągnie dostępne informacje i zapyta tylko o brakujące lub niejasne rzeczy. Instagram i Facebook nie są automatycznie analizowane jako źródło oferty.
+
+Dalsze pytania są dopasowane do usług firmy. Fotograf nie dostaje pytań o muzyków, a muzyk o albumy fotograficzne. Wspólne pytania o firmę, styl i podpis pozostają takie same.
+
+Nie podajesz ceny podstawowej podczas konfiguracji. Ceny konkretnego zlecenia, dojazd i nocleg potwierdzasz przed konkretnym mailem. Możesz zapisać stałe ceny dodatków i rozszerzeń.
+
+Po zatwierdzeniu asystent zapisze ustawienia i pokaże fikcyjny przykładowy mail dopasowany do branży.
 
 ## Codzienna praca
-Wracaj do tej samej przestrzeni pracy. Wpisz: "Piszemy nowego maila". Wklej Fathoma lub notatki i potwierdź ostateczną cenę, zakres, dodatki, dojazd, nocleg oraz planowane załączniki. Otrzymasz temat i gotową treść do poczty. Asystent korzysta z zapisanej konfiguracji.
+Wpisz: "Piszemy nowego maila". Wklej Fathoma lub notatki. Asystent ustali, której usługi dotyczy rozmowa, i poprosi tylko o brakujące potwierdzenia: cenę, zakres, dodatki, dojazd, nocleg i załączniki.
 
-Follow-up: wpisz "Piszemy follow-up" i podaj poprzedni mail oraz sytuację. Wiadomości wysyłasz samodzielnie. PDF oferty i projekt umowy przygotowujesz i dołączasz sam; narzędzie tylko o nich wspomina po Twoim potwierdzeniu.
+W firmie wielousługowej nie dopisuje wszystkich usług do każdego maila. Jeżeli Para chce wspólny pakiet, może przygotować jedną ofertę łączoną.
+
+Follow-up: wpisz "Piszemy follow-up" i podaj poprzedni mail oraz sytuację. Wiadomości wysyłasz samodzielnie.
+
+PDF lub projekt umowy, który planujesz dołączyć do konkretnego maila, nie jest automatycznie analizowany. Analiza materiałów odbywa się tylko wtedy, gdy podajesz je jako źródło wiedzy o swojej firmie lub wyraźnie o nią prosisz.
 
 ## Zmiana stylu
-Napisz np. "Od teraz zawsze zaczynaj od Cześć. Zapisz to jako stałą preferencję". Asystent sam aktualizuje ustawienia i sprawdza zapis. "W tym mailu napisz bardziej elegancko" dotyczy tylko jednej wiadomości.
+Napisz np. "Od teraz zawsze zaczynaj od Cześć. Zapisz to jako stałą preferencję". Jednorazowa prośba dotycząca jednego maila nie zmienia profilu.
 
 ## Aktualizacje
-Po uruchomieniu porannego sprawdzania asystent sam sprawdza, czy jest nowsza stabilna wersja.
-Gdy jest dostępna, pyta: "Jest dostępna nowsza wersja narzędzia. Czy aktualizować?".
-Odpowiedz "tak", aby ją zainstalować, albo "nie teraz", aby pozostać przy obecnej.
-Samo powiadomienie nie zmienia narzędzia. Nie dostajesz codziennie tego samego pytania.
-Dane firmy oraz styl pozostają bez zmian. Jeżeli ręcznie zmienisz wzorzec lub instrukcje,
-asystent ostrzeże, że zostaną zastąpione, i zachowa ich kopię przed aktualizacją.
-
-Poranny przebieg lokalny wymaga włączonego komputera i aplikacji. Jeżeli nie można uruchomić
-harmonogramu, asystent powie o tym. Nadal możesz pisać maile i użyć polecenia "Sprawdź aktualizacje".
-Nie musisz aktualizować narzędzia, aby zachować dostęp do swoich ustawień.
-
-## Pomoc
-Gdy nowa rozmowa nie rozpoznaje narzędzia, napisz: "Odczytaj instrukcję startową Wedding Mail Assistant w mojej przestrzeni pracy".
-Przy problemie z dostępem asystent powinien wyjaśnić, co trzeba poprawić, a nie udawać zapisu.
-Lokalna konfiguracja nie oznacza działania AI offline.
+Po uruchomieniu porannego sprawdzania asystent sprawdza, czy jest nowsza stabilna wersja. Gdy jest dostępna, pyta o zgodę. Dane firmy i styl pozostają bez zmian.

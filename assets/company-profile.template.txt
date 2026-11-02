@@ -1,7 +1,7 @@
 WMA COMPANY PROFILE - WZÓR, NIE JEST PROFILEM KLIENTA
 profile_type: company
-schema_version: 2
-tool_version: 1.4.0
+schema_version: 3
+tool_version: 1.5.0
 company_key: [identyfikator-firmy]
 revision: 0
 approval: TEMPLATE
@@ -9,15 +9,20 @@ updated_at: nieustalona
 change_note: pusty wzór
 
 Nazwa firmy / marka: [Q01]
-Główne usługi: [Q01]
+Struktura firmy i sposób pracy: [potwierdzona interpretacja Q01]
+Usługi sprzedawane klientom:
+- [nazwa usługi]
+  moduł: [dj / photography / video / music / universal]
+  sposób realizacji: [właściciel / zespół / podwykonawca / inny potwierdzony model]
+  zakres / pakiety / rezultat: [pole scope]
+  skład i role: [pole delivery_team]
+  dodatki i rozszerzenia: [pole extras; nazwa oraz stała cena lub indywidualnie]
+  usługi powiązane / partnerzy: [pole related_services; sposób realizacji; cena stała lub indywidualnie]
 Instagram / WWW / portfolio: [Q02 lub brak]
 Link do podpisu: [Q02 lub brak]
 Baza i obszar działania: [Q03]
-Warianty składu i role: [Q04]
-Zakres pakietów / czas / rezultat: [Q05, bez cen podstawowych]
-Katalog atrakcji i dodatków: [Q06, nazwa oraz stała cena lub indywidualnie]
-Dodatkowe występy muzyczne: [Q07, nazwa oraz stała cena lub indywidualnie]
-Współpracownicy: [Q08, usługa; w ofercie czy polecenie; stała cena lub indywidualnie]
-Wyróżniki: [Q09]
+Wyróżniki firmy: [Q09]
 Kroki rezerwacji: [Q10, bez kwot]
 Imię i nazwisko nadawcy: [Q15]
+
+Nie zapisuj tu ceny podstawowej konkretnego pakietu, warunków logistycznych pojedynczej Pary ani domyślnych załączników.

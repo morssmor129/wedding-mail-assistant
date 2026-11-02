@@ -1,0 +1,63 @@
+{
+  "module_version": "1.0.0",
+  "logical_fields": ["scope", "delivery_team", "extras", "related_services"],
+  "rules": {
+    "select_after_q01_confirmation": true,
+    "allow_multiple_modules": true,
+    "skip_answered_fields": true,
+    "do_not_infer_missing_as_no": true,
+    "fallback_module": "universal"
+  },
+  "modules": {
+    "dj": {
+      "label": "DJ / konferansjer / wodzirej",
+      "signals": ["dj", "konferansjer", "wodzirej", "oprawa muzyczna"],
+      "questions": [
+        {"id": "DJ01", "field": "scope", "text": "Jak wygląda Wasza usługa DJ-ska i prowadzenie wesela? Opisz dostępne warianty, typowy czas obsługi i to, co otrzymuje Para. Na tym etapie nie podawaj ceny podstawowej."},
+        {"id": "DJ02", "field": "delivery_team", "text": "Kto realizuje tę usługę i jak dzielicie role? Opisz wariant solo, duet lub większy skład, jeśli występuje."},
+        {"id": "DJ03", "field": "extras", "text": "Jakie dodatki i atrakcje związane z tą usługą oferujecie, na przykład ciężki dym, fontanny iskier, wiatraki, dodatkowe nagłośnienie lub obsługę ceremonii? Wymień je wraz ze stałymi cenami albo wpisz „wycena indywidualna”."},
+        {"id": "DJ04", "field": "related_services", "text": "Czy w ramach Waszej oferty można zamówić dodatkowych muzyków lub inne usługi powiązane, na przykład saksofonistę, perkusistę, wokalistę, fotografa lub filmowca? Wymień tylko rzeczywiście oferowane opcje i zaznacz, czy realizujecie je sami, przez zespół, podwykonawcę czy jedynie polecacie partnera. Podaj stałą cenę, jeśli istnieje, albo „ustalana indywidualnie”."}
+      ]
+    },
+    "photography": {
+      "label": "Fotografia ślubna",
+      "signals": ["fotograf", "fotografia", "zdjęcia", "reportaż fotograficzny"],
+      "questions": [
+        {"id": "PHOTO01", "field": "scope", "text": "Jak wygląda Wasza oferta fotografii ślubnej? Opisz zakres reportażu, dostępne warianty lub pakiety, typowy czas pracy i to, co finalnie otrzymuje Para. Na tym etapie nie podawaj ceny podstawowej."},
+        {"id": "PHOTO02", "field": "delivery_team", "text": "Kto realizuje fotografię i w jakim składzie pracujecie? Uwzględnij wariant jednego lub kilku fotografów, jeśli występuje, oraz podział ról, jeśli ma znaczenie dla klienta."},
+        {"id": "PHOTO03", "field": "extras", "text": "Jakie dodatki do fotografii oferujecie, na przykład sesję narzeczeńską, sesję poślubną, albumy, odbitki, ekspresową galerię lub dodatkowe godziny? Wymień je wraz ze stałymi cenami albo wpisz „wycena indywidualna”."},
+        {"id": "PHOTO04", "field": "related_services", "text": "Czy oferujecie lub organizujecie inne usługi powiązane, na przykład filmowanie, foto-video w jednym pakiecie, fotobudkę lub dodatkowych twórców? Zaznacz, czy realizujecie je sami, przez zespół, podwykonawcę czy tylko polecacie partnera. Podaj stałą cenę, jeśli istnieje, albo „ustalana indywidualnie”."}
+      ]
+    },
+    "video": {
+      "label": "Film ślubny / video",
+      "signals": ["film", "filmowiec", "kamerzysta", "video", "wideo", "operator"],
+      "questions": [
+        {"id": "VIDEO01", "field": "scope", "text": "Jak wygląda Wasza oferta filmowania ślubnego? Opisz zakres realizacji, dostępne warianty lub pakiety, typowy czas pracy oraz materiały, które finalnie otrzymuje Para. Na tym etapie nie podawaj ceny podstawowej."},
+        {"id": "VIDEO02", "field": "delivery_team", "text": "Kto realizuje film i w jakim składzie pracujecie? Uwzględnij liczbę operatorów i podział ról, jeśli ma znaczenie dla klienta."},
+        {"id": "VIDEO03", "field": "extras", "text": "Jakie dodatki do filmu oferujecie, na przykład ujęcia z drona, teaser, rolki do social media, dłuższą wersję filmu, dodatkowego operatora lub dodatkowe godziny? Wymień je wraz ze stałymi cenami albo wpisz „wycena indywidualna”."},
+        {"id": "VIDEO04", "field": "related_services", "text": "Czy oferujecie lub organizujecie inne usługi powiązane, na przykład fotografię, pakiet foto-video, transmisję lub dodatkowych twórców? Zaznacz, czy realizujecie je sami, przez zespół, podwykonawcę czy tylko polecacie partnera. Podaj stałą cenę, jeśli istnieje, albo „ustalana indywidualnie”."}
+      ]
+    },
+    "music": {
+      "label": "Muzyk / zespół / oprawa muzyczna",
+      "signals": ["saksofon", "skrzyp", "wokal", "muzyk", "zespół", "band", "oprawa muzyczna"],
+      "questions": [
+        {"id": "MUSIC01", "field": "scope", "text": "Jak wygląda Wasza usługa muzyczna? Opisz rodzaj występu, momenty wesela lub ceremonii, liczbę setów albo typowy czas grania oraz to, co otrzymuje klient. Na tym etapie nie podawaj ceny podstawowej."},
+        {"id": "MUSIC02", "field": "delivery_team", "text": "W jakim składzie występujecie i jakie warianty składu są dostępne? Opisz role oraz instrumenty lub wokale tylko wtedy, gdy mają znaczenie dla oferty."},
+        {"id": "MUSIC03", "field": "extras", "text": "Jakie rozszerzenia występu oferujecie, na przykład dodatkowy set, ceremonię, nagłośnienie, większy skład lub specjalny repertuar? Wymień je wraz ze stałymi cenami albo wpisz „wycena indywidualna”."},
+        {"id": "MUSIC04", "field": "related_services", "text": "Czy współpracujecie z DJ-em, zespołem, innymi muzykami lub usługodawcami, których można zamówić w ramach wspólnej oferty? Zaznacz, czy realizujecie usługę wspólnie, przez podwykonawcę czy tylko polecacie partnera. Podaj stałą cenę, jeśli istnieje, albo „ustalana indywidualnie”."}
+      ]
+    },
+    "universal": {
+      "label": "Inna usługa ślubna",
+      "signals": [],
+      "questions": [
+        {"id": "UNIV01", "field": "scope", "text": "Jak wygląda ta usługa od strony klienta? Opisz dostępne warianty, zakres realizacji, typowy czas pracy oraz to, co finalnie otrzymuje Para. Na tym etapie nie podawaj ceny podstawowej."},
+        {"id": "UNIV02", "field": "delivery_team", "text": "Kto realizuje tę usługę i w jakim składzie pracujecie? Opisz role tylko wtedy, gdy mają znaczenie dla klienta."},
+        {"id": "UNIV03", "field": "extras", "text": "Jakie dodatki lub rozszerzenia tej usługi oferujecie? Wymień je wraz ze stałymi cenami albo wpisz „wycena indywidualna”. Jeśli nie ma dodatków, wpisz „brak”."},
+        {"id": "UNIV04", "field": "related_services", "text": "Czy oferujecie lub organizujecie inne usługi powiązane? Zaznacz, czy realizujecie je sami, przez zespół, podwykonawcę czy tylko polecacie partnera. Podaj stałą cenę, jeśli istnieje, albo „ustalana indywidualnie”."}
+      ]
+    }
+  }
+}

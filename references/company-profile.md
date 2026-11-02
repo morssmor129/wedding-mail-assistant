@@ -1,19 +1,31 @@
-# Profile firmy i języka, schemat 2
+# Profile firmy i języka, schemat 3
 
-W desktopie utrzymuj dwa prywatne pliki: profil/company-profile.md i profil/user-style.md. W wyraźnie wybranym trybie Projects analogiczne źródła TXT. Nie umieszczaj w nich instrukcji Master Brain. Szablony: [firma](../assets/company-profile.template.txt), [styl](../assets/user-style.template.txt).
+W desktopie utrzymuj dwa prywatne pliki: profil/company-profile.md i profil/user-style.md. Szablony: [firma](../assets/company-profile.template.txt), [styl](../assets/user-style.template.txt). Nie umieszczaj w nich Master Brain.
 
-Nagłówek techniczny: profile_type, schema_version: 2, tool_version: 1.4.0, wspólny company_key, revision (od 1), approval: approved dopiero po zgodzie, rzeczywista znana data updated_at oraz change_note. Wyznacz company_key z nazwy, bez osobnego pytania do klienta. Nazwy plików, wersje i pola nagłówka nie należą do zwykłego podsumowania.
+Nagłówek techniczny: profile_type, schema_version, tool_version, wspólny company_key, revision, approval, updated_at i change_note. Dane techniczne nie należą do zwykłego podsumowania.
 
 ## Firma
-Zapisuj wyłącznie fakty z Q01-Q10 i imię oraz nazwisko z Q15. Ceny wolno utrwalać tylko w katalogach atrakcji, muzyków i partnerów (Q06-Q08), jako stałe lub ustalane indywidualnie. Katalog nie zastępuje potwierdzenia kwot dla konkretnej pary ani nie potwierdza dostępności współpracownika. Oferta podstawowa opisuje zakres, nie cennik.
+Profil firmy przechowuje jedną markę i mapę wszystkich potwierdzonych usług sprzedawanych klientom. Dla każdej usługi zapisz:
+- nazwę i przypisany moduł;
+- sposób realizacji: właściciel, własny zespół, podwykonawca lub inny potwierdzony model;
+- zakres/pakiety/rezultat bez ceny podstawowej;
+- skład i role, gdy mają znaczenie;
+- katalog dodatków i rozszerzeń z ceną stałą lub "indywidualnie";
+- usługi powiązane i partnerów wraz z informacją, czy firma je sprzedaje, realizuje wspólnie czy tylko poleca.
 
-Nie zapisuj ceny podstawowej, statusu podatkowego, brutto/netto, kilometrówki, progów logistycznych, kosztów noclegu, nadgodzin, kwoty zadatku ani załączników do konkretnego maila. Lokalizacja bazy i obszar pracy są danymi firmy, koszty dojazdu są danymi konkretnej oferty.
+Partner tylko polecany nie jest automatycznie usługą firmy. Firma może mieć kilka usług i kilka aktywnych modułów. Nie spłaszczaj firmy kompleksowej do jednej kategorii.
+
+Nie zapisuj ceny podstawowej, statusu podatkowego, brutto/netto, kilometrówki, progów logistycznych, kosztów noclegu, nadgodzin, kwoty zadatku ani załączników do konkretnego maila. Ceny konkretnej Pary nie trafiają do profilu.
 
 ## Styl
-Zapisuj Q11-Q14 i zwrot kończący Q16. Dopuszczaj zatwierdzone później preferencje języka, ale nie reguły długości, CTA, formatowania lub metodologii. Nie przenoś całych przykładowych maili ani danych par. Podpis składaj z profili według [signature.md](signature.md).
+Zachowaj dotychczasowy profil stylu. Zapisuj Q11-Q14 i Q16 oraz późniejsze zatwierdzone preferencje językowe. Nie zapisuj reguł długości, CTA, formatowania lub metodologii. Nie przenoś całych maili ani danych par.
 
 ## Podsumowanie
-Pokazuj trzy sekcje: "Firma i oferta", "Twój sposób komunikacji", "Gotowy podpis". Bez VAT, cen pakietów, parametrów Master Brain, ścieżek, rewizji i statusów technicznych. "Pokaż mój profil" ma taki sam format. Szczegóły techniczne udostępnij tylko na wyraźną prośbę.
+Pokazuj "Firma i oferta", "Twój sposób komunikacji", "Gotowy podpis". W części firmy pogrupuj informacje według usług, jeśli firma ma więcej niż jedną. Bez cen podstawowych, parametrów Master Brain, ścieżek i rewizji.
 
-## Migracja istniejącego profilu
-Nie uruchamiaj automatycznie wszystkich 16 pytań ponownie. Odczytaj pełne stare profile, zachowaj ich kopie i wykorzystaj zatwierdzone odpowiedzi. W nowym aktywnym schemacie pomiń niedozwolone pola z dawnego onboardingu; nie kasuj kopii historycznych. Nie przenoś ceny podstawowej do katalogu dodatków. Podziel dawne "dodatki i współpracownicy" na Q06-Q08 tylko gdy fakty są jednoznaczne. Uzupełnij wyłącznie istotne braki, np. nazwisko lub link do podpisu, zgodnie z pytaniem kanonicznym. Pokaż klientowi oczyszczone podsumowanie do zatwierdzenia, bez wyliczania usuwanych reguł technicznych. Zachowaj company_key, zwiększ revision i po zgodzie zapisz z odczytem kontrolnym. Aktualizacja narzędzia nie może po cichu wyzerować ani nadpisać profili.
+## Migracja z wcześniejszych wersji
+Nie uruchamiaj starego formularza ani pełnego nowego onboardingu. Zachowaj kopie profili oraz wszystkie zatwierdzone dane i user-style. Na podstawie istniejących informacji zaproponuj mapę usług i modułów, a następnie poproś o potwierdzenie. Dopytaj tylko o pola potrzebne do rozdzielenia usług albo istotne braki w nowych modułach.
+
+Dawne pola "dodatki", "muzycy" i "współpracownicy" przypisz do właściwej usługi tylko wtedy, gdy kontekst jest jednoznaczny. Jeśli nie wiesz, czy fotograf jest częścią firmy czy tylko polecanym partnerem, zapytaj. Nie przenoś ceny podstawowej do katalogu dodatków. Nie usuwaj historii. Po zgodzie zapisz schemat 3 z nową rewizją i odczytem kontrolnym.
+
+Aktualizacja narzędzia sama w sobie nie migruje profilu. Migracja odbywa się przy interakcji z użytkownikiem i nie może wyzerować danych ani stylu.

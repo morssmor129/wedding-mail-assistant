@@ -1,3 +1,14 @@
+# 1.5.0 - 2026-11-02
+- Stały rdzeń onboardingu + moduły branżowe DJ, fotografia, film, muzyk/zespół i uniwersalny.
+- Q01 rozpoznaje wszystkie usługi i strukturę firmy; przed modułami wymaga potwierdzenia mapy usług.
+- Obsługa firm wielousługowych i pakietów łączonych bez powtarzania danych firmy i stylu.
+- Opcjonalna analiza PDF, DOCX, wcześniejszego maila i publicznej strony WWW podczas konfiguracji.
+- Instagram i Facebook pozostają linkami; brak automatycznej analizy jako źródła oferty.
+- Rozdzielenie materiału do konfiguracji od PDF/umowy planowanych tylko jako załączniki do maila.
+- Branżowe scenariusze demonstracyjne: DJ, fotografia, video, muzyk/zespół, firma łączona i universal.
+- Migracja zachowuje istniejący profil i styl oraz dopytuje wyłącznie o nowe istotne braki.
+- Master Brain i Master Sample v3.0 zachowane bez zmian.
+
 # 1.4.0 - 2026-10-23
 - Daily morning update check; notification only, installation after specific user approval.
 - Real scheduler creation/verification, deduplication and honest handling of unsupported accounts.
