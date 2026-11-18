@@ -24,3 +24,6 @@ Availability and task limits depend on the account/app. Web tasks are not proof 
 access. Do not rely on project uploads in cloud tasks; use a self-contained repository watch prompt.
 The morning policy, stable-release manifest, backup and confirmation rules are WMA design decisions,
 not a promise of a built-in auto-update service provided by OpenAI.
+
+## Wersja 1.5.0 - moduły branżowe
+Wersja 1.5.0 wprowadza zatwierdzony przez autora stały szkielet logicznych pól i moduły DJ, fotografia, video, muzyk/zespół oraz universal. Master Brain i Master Sample v3.0 pozostają bez zmian. Analiza PDF/DOCX/mail/WWW służy wyłącznie do uzupełniania profilu po potwierdzeniu użytkownika; Instagram i Facebook nie są automatycznie analizowane jako źródła oferty.

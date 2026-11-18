@@ -1,3 +1,9 @@
+# 1.5.1 - 2026-11-18
+- Poprawiono kompletność stabilnego manifestu wydania: obejmuje wszystkie zarządzane pliki narzędzia wymagane przez aktualizator.
+- Aktualizacja z wcześniejszych wersji może teraz pobrać m.in. instrukcję podpisu, procedurę aktualizacji, Master Brain, update guard i pozostałe referencje bez pozostawiania mieszanej wersji.
+- Zachowano funkcjonalność 1.5.0, profile klientów i styl pozostają poza automatyczną aktualizacją.
+- Uporządkowano testy wydania pod modułowy onboarding 1.5.x.
+
 # 1.5.0 - 2026-11-02
 - Stały rdzeń onboardingu + moduły branżowe DJ, fotografia, film, muzyk/zespół i uniwersalny.
 - Q01 rozpoznaje wszystkie usługi i strukturę firmy; przed modułami wymaga potwierdzenia mapy usług.

@@ -1,5 +1,5 @@
 # Wedding Mail Assistant by Jester Ads
-Wersja 1.5.0. Oferty i follow-upy po polsku dla usługodawców ślubnych.
+Wersja 1.5.1. Oferty i follow-upy po polsku dla usługodawców ślubnych.
 
 ## Co robi
 Jednorazowo poznaje firmę i zapisuje jej profil oraz styl. Obsługuje DJ-ów, fotografów, filmowców, muzyków, zespoły i firmy wielousługowe. Po odpowiedzi na pierwsze pytanie rozpoznaje zakres działalności, prosi o potwierdzenie i uruchamia wyłącznie właściwe moduły pytań.

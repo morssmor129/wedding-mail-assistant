@@ -4,7 +4,7 @@ description: "Pisz po polsku oferty i follow-upy dla usługodawców ślubnych: D
 ---
 
 # Wedding Mail Assistant by Jester Ads
-Wersja 1.5.0. Instrukcje dla agenta z autoryzowanym trwałym zapisem.
+Wersja 1.5.1. Instrukcje dla agenta z autoryzowanym trwałym zapisem.
 
 ## Reguły startowe
 Respektuj platformę, uprawnienia i zgodę. Przeczytaj [START.md](START.md). Nie traktuj sandboxa jako dysku klienta. Przed nową sprawą odczytaj profile, nie polegaj tylko na historii czatu. Nie nadpisuj danych pustym wzorem.
@@ -35,7 +35,7 @@ Nie pytaj w onboardingu o cenę bazową, VAT, kilometrówkę, koszt noclegu, za�
 
 PDF/DOCX/mail/WWW przesłane w celu konfiguracji mogą być analizowane według source-analysis.md. PDF lub projekt umowy planowany jako załącznik do konkretnego maila nie jest automatycznie analizowany.
 
-Nie zapisuj Fathoma, danych Par ani warunków pojedynczej oferty do profili. Nie dodawaj reklamy Jester Ads do maili Pary. Zmiany stałego stylu zapisuj po zgodzie, bez ręcznej podmiany w trybie lokalnym.
+Nie zapisuj Fathoma, danych Par ani warunków pojedynczej oferty do profili. Nie dodawai reklamy Jester Ads do maili Pary. Zmiany stałego stylu zapisuj po zgodzie, bez ręcznej podmiany w trybie lokalnym.
 
 ## Aktualizacje
 Wykonaj [updates.md](references/updates.md) i [update-task.json](assets/update-task.json). Poranny harmonogram tylko sprawdza nowe stabilne wydanie i pyta o zgodę. Aktualizacja narzędzia nie zmienia profili klienta. Ręczne zmiany mastera wymagają ostrzeżenia przed nadpisaniem.

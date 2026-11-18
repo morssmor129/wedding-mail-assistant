@@ -31,7 +31,7 @@ class UpdateChecks(unittest.TestCase):
         self.addCleanup(self.tmp.cleanup)
         self.root=Path(self.tmp.name)
         self.tool=self.root/'narzedzie'; self.stage=self.root/'stage'
-        write_release(self.tool,'1.4.0'); write_release(self.stage,'1.5.0')
+        write_release(self.tool,'1.4.0'); write_release(self.stage,'1.5.1')
 
     def do_apply(self, **kw):
         p=guard.plan(self.tool,self.stage)
@@ -63,7 +63,7 @@ class UpdateChecks(unittest.TestCase):
         result=self.do_apply()
         self.assertTrue(result['updated'])
         for p in private: self.assertEqual(p.read_bytes(),b'CLIENT DATA\x00unchanged')
-        self.assertEqual(guard.load_manifest(self.tool)['version'],'1.5.0')
+        self.assertEqual(guard.load_manifest(self.tool)['version'],'1.5.1')
         self.assertTrue((Path(result['backup'])/'SKILL.md').is_file())
 
     def test_manual_master_requires_warning_consent_and_is_backed_up(self):
@@ -154,8 +154,8 @@ class UpdateChecks(unittest.TestCase):
         self.assertIn('FREQ=DAILY;BYHOUR=8',task['schedule'])
         self.assertFalse(task['auto_install'])
         self.assertTrue(task['require_user_consent_for_each_update'])
-        self.assertEqual(guard.load_manifest(ROOT)['version'],'1.4.0')
+        self.assertEqual(guard.load_manifest(ROOT)['version'],'1.5.1')
 
 
 if __name__=='__main__':
-    unittest.main(verbosity=2)
+    unittest.main(™\˜›ÜÚ]OLŠB

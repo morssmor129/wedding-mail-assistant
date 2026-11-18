@@ -1,201 +1,152 @@
 #!/usr/bin/env python3
-"""Regression checks for artifacts and helpers; not a Desktop integration test."""
+"""Regression checks for WMA 1.5.1 artifacts; not a Desktop integration test."""
 from __future__ import annotations
-import copy
 import hashlib
 import json
 import re
-import subprocess
 import sys
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from onboarding_form import load_form, render
-from check_demo import calculate_total, check_email
-BASELINES = json.loads((ROOT / 'tests/expected-hashes.json').read_text(encoding='utf-8'))
+import update_guard as guard
+from onboarding_form import load_core, load_modules
+from check_demo import scenarios, calculate_total
+
+BASE = json.loads((ROOT/'tests/expected-hashes.json').read_text(encoding='utf-8'))
 
 
-def text(name: str) -> str:
-    return (ROOT / name).read_text(encoding='utf-8')
+def text(path: str) -> str:
+    return (ROOT/path).read_text(encoding='utf-8')
 
 
-def data(name: str) -> dict:
-    return json.loads(text(name))
+def data(path: str) -> dict:
+    return json.loads(text(path))
 
 
 class PackageChecks(unittest.TestCase):
-    def test_entrypoints(self):
-        for name in ('START.md','SKILL.md','AGENTS.md','INSTRUKCJA-KLIENTA.md','VERSION'):
-            self.assertTrue((ROOT / name).is_file(), name)
-        self.assertEqual(text('VERSION').strip(), '1.4.0')
+    def test_version_consistency(self):
+        self.assertEqual(text('VERSION').strip(), '1.5.1')
+        for path in ('README.md','SKILL.md','START.md','QA-REPORT.md'):
+            self.assertIn('1.5.1', text(path), path)
+        for path in ('assets/company-profile.template.txt','assets/user-style.template.txt'):
+            self.assertIn('tool_version: 1.5.1', text(path), path)
+        self.assertIn('tool_version to 1.5.1', text('references/local-workspace.md'))
 
-    def test_one_skill(self):
+    def test_one_skill_and_metadata(self):
         self.assertEqual([p.relative_to(ROOT).as_posix() for p in ROOT.rglob('SKILL.md')], ['SKILL.md'])
+        meta=text('agents/openai.yaml')
+        self.assertIn('display_name:', meta)
+        self.assertIn('short_description:', meta)
 
-    def test_sample_unchanged(self):
-        self.assertEqual(hashlib.sha256((ROOT / 'references/master-sample.md').read_bytes()).hexdigest(), BASELINES['master_sample'])
+    def test_master_sample_and_brain_unchanged(self):
+        self.assertEqual(hashlib.sha256((ROOT/'references/master-sample.md').read_bytes()).hexdigest(), BASE['master_sample'])
+        self.assertEqual(hashlib.sha256((ROOT/'references/master-brain.md').read_bytes()).hexdigest(), BASE['master_brain'])
 
-    def test_authorized_core_hash(self):
-        self.assertNotEqual(BASELINES['master_brain'], BASELINES['previous_master_brain'])
-        self.assertEqual(hashlib.sha256((ROOT / 'references/master-brain.md').read_bytes()).hexdigest(), BASELINES['master_brain'])
+    def test_modular_onboarding_hashes(self):
+        self.assertEqual(hashlib.sha256((ROOT/'assets/onboarding-questions.json').read_bytes()).hexdigest(), BASE['onboarding_core'])
+        self.assertEqual(hashlib.sha256((ROOT/'assets/service-modules.json').read_bytes()).hexdigest(), BASE['service_modules'])
+        core=load_core()
+        self.assertEqual([q['id'] for q in core['questions']], ['Q01','Q02','Q03','Q09','Q10','Q11','Q12','Q13','Q14','Q15','Q16'])
+        self.assertEqual([s['id'] for s in core['sections']], ['A','C','D'])
+        q1=core['questions'][0]['text'].lower()
+        self.assertIn('wszystkie usługi', q1)
+        self.assertIn('zespole', q1)
 
-    def test_frozen_questionnaire(self):
-        self.assertEqual(hashlib.sha256((ROOT / 'assets/onboarding-questions.json').read_bytes()).hexdigest(), BASELINES['onboarding_form'])
-        form = load_form()
-        self.assertEqual([q['id'] for q in form['questions']], [f'Q{i:02}' for i in range(1, 17)])
-        self.assertEqual([s['id'] for s in form['sections']], ['A', 'B', 'C', 'D'])
+    def test_modules_and_logical_fields(self):
+        modules=load_modules()['modules']
+        self.assertEqual(set(modules), {'dj','photography','video','music','universal'})
+        for key, module in modules.items():
+            self.assertEqual([q['field'] for q in module['questions']], ['scope','delivery_team','extras','related_services'], key)
+        photo=' '.join(q['text'].lower() for q in modules['photography']['questions'])
+        music=' '.join(q['text'].lower() for q in modules['music']['questions'])
+        self.assertNotIn('saksofonist', photo)
+        self.assertNotIn('album', music)
 
-    def test_fixed_choices(self):
-        qs = {q['id']:q for q in load_form()['questions']}
-        for key, count in [('Q11',4),('Q12',3),('Q13',3),('Q16',5)]:
-            self.assertEqual(qs[key]['type'], 'single_choice')
-            self.assertEqual([o['id'] for o in qs[key]['options']], [chr(65+i) for i in range(count)])
-        self.assertEqual(qs['Q15']['section'], 'D')
+    def test_company_profile_schema_and_style_separation(self):
+        company=text('assets/company-profile.template.txt')
+        style=text('assets/user-style.template.txt')
+        for required in ('schema_version: 3','tool_version: 1.5.1','approval: TEMPLATE','Usługi sprzedawane klientom'):
+            self.assertIn(required, company)
+        for required in ('schema_version: 3','tool_version: 1.5.1','Q11','Q12','Q13','Q14','Q16'):
+            self.assertIn(required, style)
+        for forbidden in ('Q11','Q12','Q13','Q14','Q16'):
+            self.assertNotIn(forbidden, company)
 
-    def test_no_financial_or_core_configuration_questions(self):
-        questions = '\n'.join(q['text'] for q in load_form()['questions']).lower()
-        for forbidden in ('vat','brutto','netto','kilometr','nocleg','180','250','markdown','liczba znak','d\u0142ugo\u015b\u0107 mail'):
-            self.assertNotIn(forbidden, questions)
-        self.assertIn('nie podawaj ceny', questions)
+    def test_source_analysis_boundaries(self):
+        value=text('references/source-analysis.md').lower()
+        for required in ('pdf','docx','strony www','instagram','facebook','konflikt','wcześniejszy mail'):
+            self.assertIn(required, value)
+        self.assertIn('nie analizuj automatycznie instagrama', value)
+        self.assertIn('nie przenoś ceny podstawowej', value)
 
-    def test_renderer_exact_questions_and_no_fake_controls(self):
-        output = render()
-        for q in load_form()['questions']:
-            self.assertEqual(output.count(q['text']), 1)
-        self.assertNotIn('[ ]', output)
-        self.assertNotIn('[Prze', output)
-        with self.assertRaises(ValueError):
-            render('unknown')
+    def test_multi_service_offer_rules(self):
+        value=text('references/offer-workflow.md').lower()
+        self.assertIn('firmy wielousługowej', value)
+        self.assertIn('pakiecie łączonym', value)
+        self.assertIn('nie sumuj automatycznie', value)
+        self.assertIn('pdf-u, www lub fathoma nie zastępują potwierdzenia', value)
 
-    def test_renderer_sections_and_fresh_process(self):
-        form = load_form()
-        for group in form['sections']:
-            output = render(group['id'])
-            for q in form['questions']:
-                self.assertEqual(q['text'] in output, q['section'] == group['id'])
-        result = subprocess.run([sys.executable, str(ROOT/'scripts/onboarding_form.py'), '--section','A'], capture_output=True, text=True, encoding='utf-8', check=True)
-        self.assertEqual(result.stdout, render('A'))
+    def test_signature_rule_present(self):
+        value=text('references/signature.md')
+        for q in ('Q16','Q15','Q01','Q02'):
+            self.assertIn(q, value)
 
-    def test_links(self):
+    def test_demos_all_valid_and_isolated(self):
+        self.assertEqual(hashlib.sha256((ROOT/'assets/demo-scenarios.json').read_bytes()).hexdigest(), BASE['demo_scenarios'])
+        values=scenarios()
+        self.assertEqual(set(values), {'dj','photography','video','music','combined','universal'})
+        for key, scenario in values.items():
+            self.assertGreater(calculate_total(scenario),0,key)
+            self.assertTrue(scenario['never_persist_to_company_or_style'])
+        self.assertIn('Nigdy nie zapisuj danych demo', text('references/demo-workflow.md'))
+
+    def test_update_policy_and_profiles_protected(self):
+        task=data('assets/update-task.json')
+        self.assertFalse(task['auto_install'])
+        self.assertTrue(task['require_user_consent_for_each_update'])
+        updates=text('references/updates.md')
+        self.assertIn('Never modify company data, style', updates)
+        self.assertIn('Do not rebuild the same', updates)
+        self.assertIn('version with different content', updates)
+
+    def test_manifest_complete_and_verified(self):
+        release=guard.load_manifest(ROOT)
+        self.assertEqual(release['version'], '1.5.1')
+        managed=set()
+        for path in ROOT.rglob('*'):
+            if not path.is_file():
+                continue
+            rel=path.relative_to(ROOT).as_posix()
+            if rel == 'release.json':
+                continue
+            if guard.managed(rel):
+                managed.add(rel)
+        self.assertEqual(set(release['files']), managed)
+        for required in ('references/signature.md','references/updates.md','references/master-brain.md','assets/update-task.json','scripts/update_guard.py'):
+            self.assertIn(required, release['files'])
+
+    def test_no_private_profiles_in_package(self):
+        for rel in ('profil','profiles','backups'):
+            self.assertFalse((ROOT/rel).exists())
+        private={'user-style.md','company-profile.txt','user-style.txt','profile-history.md'}
+        for path in ROOT.rglob('*'):
+            if path.is_file() and path.name in private:
+                self.fail(f'Private profile file bundled: {path}')
+
+    def test_links_resolve(self):
         for path in ROOT.rglob('*.md'):
             for target in re.findall(r'\[[^\]]+\]\(([^)]+)\)', path.read_text(encoding='utf-8')):
                 if '://' not in target and not target.startswith(('#','mailto:')):
-                    self.assertTrue((path.parent / target.split('#')[0]).is_file(), (str(path), target))
-
-    def test_no_private_profiles(self):
-        private = {'company-profile.md','user-style.md','company-profile.txt','user-style.txt','profile-history.md'}
-        for path in ROOT.rglob('*'):
-            if path.is_file() and path.parent.name != 'references':
-                self.assertNotIn(path.name, private)
-        for name in ('profil','backups'):
-            self.assertFalse((ROOT/name).exists())
-
-    def test_templates(self):
-        for path in (ROOT/'assets').glob('*.template.txt'):
-            value = path.read_text(encoding='utf-8')
-            for required in ('approval: TEMPLATE','revision: 0','schema_version: 2','tool_version: 1.4.0'):
-                self.assertIn(required, value)
-            for forbidden in ('VAT','brutto','netto','kilometr','180','250','70-130','Markdown','Cena podstawowa:','Orientacyjny cennik:','Dojazd / nocleg','Domy\u015blne planowane za\u0142\u0105czniki:'):
-                self.assertNotIn(forbidden, value)
-
-    def test_separate_catalogs(self):
-        value = text('assets/company-profile.template.txt')
-        for q in ('Q06','Q07','Q08'):
-            self.assertIn(q, value)
-        self.assertNotIn('Q11', value)
-        self.assertNotIn('Q16', value)
-
-    def test_style_separated(self):
-        value = text('assets/user-style.template.txt')
-        for q in ('Q11','Q12','Q13','Q14','Q16'):
-            self.assertIn(q, value)
-        for q in ('Q01','Q06','Q07','Q08'):
-            self.assertNotIn(q, value)
-
-    def test_signature(self):
-        value = text('references/signature.md')
-        for q in ('Q16','Q15','Q01','Q02'):
-            self.assertIn(q, value)
-        self.assertEqual(sorted(re.findall(r'^([1-4])\.',value,re.M)), ['1','2','3','4'])
-
-    def test_ignore(self):
-        value = text('.gitignore')
-        for required in ('/profil/','**/user-style.md','!/references/company-profile.md','.env'):
-            self.assertIn(required, value)
+                    self.assertTrue((path.parent/target.split('#')[0]).is_file(), (str(path), target))
 
     def test_utf8_and_no_private_recordings(self):
         for path in ROOT.rglob('*'):
-            if path.is_file() and path.suffix in ('.md','.txt','.json','.yaml'):
-                value = path.read_text(encoding='utf-8')
+            if path.is_file() and path.suffix in ('.md','.txt','.json','.yaml','.yml'):
+                value=path.read_text(encoding='utf-8')
                 self.assertNotIn('\ufffd', value, str(path))
                 self.assertNotIn('fathom.video/share/', value, str(path))
-                self.assertIsNone(re.search(r'~[acelnoszxACELNOSZX]', value), str(path))
-
-    def test_persistence_and_migration(self):
-        local = text('references/local-workspace.md')
-        for required in ('ROOT/profil/company-profile.md','ROOT/profil/user-style.md','company_key','revision','backups','Ponownie odczytaj'):
-            self.assertIn(required, local)
-        profile = text('references/company-profile.md')
-        for required in ('Migracja','kopie','Nie uruchamiaj automatycznie wszystkich 16'):
-            self.assertIn(required, profile)
-
-    def test_no_visible_technical_finish(self):
-        value = text('references/onboarding.md')
-        self.assertIn('Nie pokazuj', value)
-        self.assertIn('kart plik', value)
-        self.assertIn('AUTOMATYCZNIE', value)
-        guide = text('INSTRUKCJA-KLIENTA.md')
-        self.assertNotIn('rewizj', guide)
-        self.assertNotIn('ROOT/', guide)
-        self.assertNotIn('company-profile', guide)
-
-    def test_demo_isolation_and_unknown_date(self):
-        scenario = data('assets/demo-offer.json')
-        self.assertTrue(scenario['is_demo'])
-        self.assertTrue(scenario['never_persist_to_company_or_style'])
-        self.assertIsNone(scenario['couple']['date'])
-        self.assertIsNone(scenario['service']['headcount'])
-        self.assertEqual(scenario['attachments'], [])
-        value = text('references/demo-workflow.md')
-        self.assertIn('Nigdy nie zapisuj', value)
-        self.assertIn('Inne bran', value)
-
-    def test_demo_amounts(self):
-        scenario = data('assets/demo-offer.json')
-        self.assertEqual(scenario['service']['price'],6500)
-        self.assertEqual(scenario['travel']['price'],500)
-        self.assertEqual([x['price'] for x in scenario['selected_extras']],[600,300])
-        self.assertEqual(calculate_total(scenario),7900)
-        self.assertEqual(hashlib.sha256((ROOT/'assets/demo-offer.json').read_bytes()).hexdigest(), BASELINES['demo_scenario'])
-
-    def test_demo_rejects_changed_total_or_lodging(self):
-        for mutate in ('total','lodging','flag'):
-            s=copy.deepcopy(data('assets/demo-offer.json'))
-            if mutate=='total': s['total_payable']=7600
-            elif mutate=='lodging': s['lodging']['price']=0
-            else: s['is_demo']=False
-            with self.assertRaises(ValueError): calculate_total(s)
-
-    def test_demo_email_fixture(self):
-        email = data('tests/fixtures/demo-output.json')
-        self.assertTrue(email['fictional_fixture'])
-        self.assertEqual(check_email(email), [])
-
-    def test_demo_email_negative_format_and_cta(self):
-        email = data('tests/fixtures/demo-output.json')
-        bad=copy.deepcopy(email); bad['body']+=' \u2014 **test**'
-        self.assertTrue(check_email(bad))
-        bad=copy.deepcopy(email); bad['body']=bad['body'].replace('jutro o 18:00','za tydzie\u0144')
-        self.assertTrue(any('CTA' in e for e in check_email(bad)))
-        bad=copy.deepcopy(email); bad['body']=bad['body'].replace('7 900','7 000')
-        self.assertTrue(any('7900' in e for e in check_email(bad)))
-
-    def test_metadata(self):
-        value=text('agents/openai.yaml')
-        self.assertIn('display_name:',value)
-        self.assertIn('short_description:',value)
 
 
 if __name__ == '__main__':

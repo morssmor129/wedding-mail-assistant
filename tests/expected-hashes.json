@@ -1,7 +1,7 @@
 {
   "master_sample": "8e08ba65b560ba4556af435cc307ac32835a98a4d371b727fd828c2ba9820230",
   "master_brain": "40426b0599a1348e9b7329b1f3af5e73b50918031499090db8d7adb1c40bcd30",
-  "previous_master_brain": "d5c44e78bb2efb6fefd033f88f704d2e6ad25d36fe140e7340d966b49f4274df",
-  "onboarding_form": "07f0047ee8686d4deba9d4ba06c1412c3fde28445e7c770b25afe68542d56bc2",
-  "demo_scenario": "d3cd02c914da80c9ddfb4160e9aa92e9e6053d0ad3d363d680b0d667e8dbecf4"
+  "onboarding_core": "b6ee0bb4a6e59a8eacd3beec77d1953f8671483e413f6cc788b6dc66c6af2189",
+  "service_modules": "411422bf7ee3af77b582d7f3d164c0162835fcdc12a71ab47c6b1d2ec5a15642",
+  "demo_scenarios": "5783aea3ad008847a6aada0bfe8de20cac5c84285f8458e4ad2a238faff3c7c1"
 }

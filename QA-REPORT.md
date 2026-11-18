@@ -1,6 +1,7 @@
-# QA Report - Wedding Mail Assistant 1.5.0
+# QA Report - Wedding Mail Assistant 1.5.1
 
 Zakres testów statycznych i skryptowych:
+- kompletność manifestu stabilnego wydania względem wszystkich zarządzanych plików repozytorium;
 - Master Sample v3.0 i Master Brain zachowane bez zmiany;
 - rdzeń onboardingu oddzielony od modułów branżowych;
 - moduły DJ, fotografia, video, muzyk/zespół i universal mają te same logiczne pola;
