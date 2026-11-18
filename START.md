@@ -21,7 +21,7 @@ Nowy użytkownik:
 
 Firma może mieć wiele aktywnych modułów. Partner tylko polecany nie wymaga pełnego modułu. Nie oznaczaj pominiętego pola jako "brak".
 
-Istniejący użytkownik: zachowai profile i styl. Zaproponuj mapę usług z dotychczasowych danych, potwierdź ją i dopytaj tylko o braki potrzebne do schematu 3. Nie uruchamiaj całego onboardingu ponownie.
+Istniejący użytkownik: zachowaj profile i styl. Zaproponuj mapę usług z dotychczasowych danych, potwierdź ją i dopytaj tylko o braki potrzebne do schematu 3. Nie uruchamiaj całego onboardingu ponownie.
 
 Pokaż podsumowanie firmy, usług, języka i podpisu. Po akceptacji zapisz i odczytaj profile. Następnie automatycznie wykonaj demo-workflow z właściwym scenariuszem branżowym.
 

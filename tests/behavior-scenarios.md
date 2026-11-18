@@ -14,7 +14,7 @@
 12. Firma foto-video, Para pyta tylko o zdjęcia: mail używa photography i nie dopisuje filmu.
 13. Firma kompleksowa, Para kupuje wspólny pakiet: jedna oferta może obejmować kilka usług, a podanej ceny pakietu nie sumuje się drugi raz z katalogów.
 14. Demo: scenariusz odpowiada głównej usłudze albo combined; dane demo nie trafiają do profilu.
-15. Migracja z wcześniejszej wersji: zachowai profil i styl, potwierdź mapę usług i dopytaj wyłącznie o nowe braki.
+15. Migracja z wcześniejszej wersji: zachowaj profil i styl, potwierdź mapę usług i dopytaj wyłącznie o nowe braki.
 16. Aktualizacja 1.5.1: manifest obejmuje wszystkie zarządzane pliki wydania, ale nie profile klienta; instalacja nadal wymaga zgody.
 
 Automatyczne testy plików i helperów nie dowodzą działania konkretnej aplikacji desktopowej ani dostępu do lokalnego folderu klienta.
